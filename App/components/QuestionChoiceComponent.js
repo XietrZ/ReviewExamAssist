@@ -117,9 +117,13 @@ const QuestionChoiceComponent = ({ isShowAnswers, selectedQuestionIndex }) => {
                 {/* Text Label if Answer is Correct or Wrong! */}
                 {isShowAnswers && (
                   <View
-                    style={
-                      styles.textLabelIfAnswerIsCorrectWrongContainerWrapper
-                    }
+                    style={[
+                      styles.textLabelIfAnswerIsCorrectWrongContainerWrapper,
+                      homeMenuOption == Constants.MENU_OPTION_TWO &&
+                      isShowAnswers
+                        ? { paddingTop: 5, marginBottom: 30 }
+                        : { paddingTop: 19 },
+                    ]}
                   >
                     <Text
                       style={[
