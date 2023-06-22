@@ -6,6 +6,7 @@ import {
   setQuestionTracker,
   setSelectedQuestionIndex,
 } from "../slices/globalSlice";
+import Constants from "../constants/Constants";
 
 // ******************************************************************
 /**
@@ -146,12 +147,12 @@ const isMyAnswerToQuestionCorrect = ({
   });
 
   if (isStart == null && isChoiceCorrectCount == markedCount) {
-    return "fullcorrect";
+    return Constants.FULL_CORRECT_ANSWER;
   } else if (isStart == null) {
-    return "halfcorrect";
+    return Constants.HALF_CORRECT_ANSWER;
   }
 
-  return "false";
+  return Constants.WRONG_ANSWER;
 };
 
 // ******************************************************************

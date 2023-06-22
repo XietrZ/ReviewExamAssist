@@ -4,7 +4,7 @@ import styles from "../stylesheets/QuestionAnswerScreen.style";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Button, Icon, Text } from "@rneui/themed";
 import { Entypo } from "@expo/vector-icons";
-import Colors from "../data/Color";
+import Colors from "../constants/Color";
 import sapCertificationQuestAnsData from "../data/SapCertificationQuestionAnswerData";
 import { RadioButton } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
@@ -23,6 +23,7 @@ import {
   isMyAnswerToQuestionCorrect,
   markedChoices,
 } from "../util/Util";
+import Constants from "../constants/Constants";
 
 const QuestionAnswerScreen = () => {
   const navigation = useNavigation();
@@ -195,14 +196,14 @@ const QuestionAnswerScreen = () => {
                         <Text
                           style={[
                             styles.textLabelIfAnswerIsCorrectWrongWrapper,
-                            isAnswerCorrect == "false"
+                            isAnswerCorrect == Constants.WRONG_ANSWER
                               ? { color: "red" }
                               : { color: "green" },
                           ]}
                         >
-                          {isAnswerCorrect == "false"
+                          {isAnswerCorrect == Constants.WRONG_ANSWER
                             ? "Your answer is Wrong!"
-                            : isAnswerCorrect == "halfcorrect"
+                            : isAnswerCorrect == Constants.HALF_CORRECT_ANSWER
                             ? "Your answer is only HALF correct"
                             : "Your answer is Correct!"}
                         </Text>
