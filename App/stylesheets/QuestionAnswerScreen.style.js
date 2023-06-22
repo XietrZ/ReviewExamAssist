@@ -62,6 +62,49 @@ const styles = StyleSheet.create({
     marginRight: 2,
     fontSize: 15,
   },
+
+  textLabelIfAnswerIsCorrectWrongContainerWrapper: {
+    alignItems: "center",
+    paddingTop: 19,
+  },
+
+  textLabelIfAnswerIsCorrectWrongWrapper: {
+    fontSize: 22,
+    fontWeight: 700,
+  },
+
+  buttonsContainerWrapper: {
+    flex: 1,
+    flexDirection: "row",
+    // backgroundColor: "red",
+    justifyContent: "space-between",
+    marginHorizontal: 22,
+    marginVertical: 39,
+  },
+
+  buttonStyleWrapper: {
+    borderRadius: 15,
+    flex: 1,
+    backgroundColor: Colors.tiffany_blue,
+  },
+
+  buttonTitleStyleWrapper: { color: "black" },
+
+  leftButtonsContainerWrapper: {
+    // flex: 1,
+    flexDirection: "row",
+    // backgroundColor: "blue",
+  },
+
+  doneTextLabelContainerWrapper: {
+    paddingTop: 48,
+    // backgroundColor: "red",
+    justifyContent: "center",
+    alignItems: "center",
+    paddingBottom: 48,
+  },
+
+  doneTextWrapper: { fontSize: 15, textAlign: "center" },
 });
 
 export default styles;

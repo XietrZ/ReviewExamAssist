@@ -8,6 +8,15 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 
+  titleTextWrapper: {
+    // backgroundColor: "red",
+    textAlign: "center",
+    fontSize: 35,
+    fontWeight: 600,
+    marginTop: 50,
+    marginBottom: 15,
+  },
+
   optionContainerStyle: {
     marginHorizontal: 37,
     marginTop: 81,
