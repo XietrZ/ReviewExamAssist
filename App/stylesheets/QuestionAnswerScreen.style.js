@@ -93,18 +93,26 @@ const styles = StyleSheet.create({
   leftButtonsContainerWrapper: {
     // flex: 1,
     flexDirection: "row",
+    marginLeft: 5,
     // backgroundColor: "blue",
   },
 
   doneTextLabelContainerWrapper: {
-    paddingTop: 48,
-    // backgroundColor: "red",
+    marginTop: 48,
+    backgroundColor: Colors.hot_pink,
     justifyContent: "center",
     alignItems: "center",
-    paddingBottom: 48,
+    marginBottom: 48,
+    borderRadius: 5,
+    marginHorizontal: 10,
   },
 
-  doneTextWrapper: { fontSize: 15, textAlign: "center" },
+  doneTextWrapper: {
+    fontSize: 25,
+    fontWeight: 600,
+    textAlign: "center",
+    paddingVertical: 10,
+  },
 });
 
 export default styles;

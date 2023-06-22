@@ -13,6 +13,7 @@ import {
   setQuestionTracker,
 } from "../slices/globalSlice";
 import sapCertificationQuestAnsData from "../data/SapCertificationQuestionAnswerData";
+import Constants from "../constants/Constants";
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -31,7 +32,7 @@ const HomeScreen = () => {
         titleStyle={styles.optionTitleStyle}
         onPress={() => {
           // -->
-          dispatch(setHomeMenuOption(1));
+          dispatch(setHomeMenuOption(Constants.MENU_OPTION_ONE));
 
           // -->
           dispatch(setQuestChoiceAnsData(sapCertificationQuestAnsData));
@@ -61,9 +62,16 @@ const HomeScreen = () => {
         buttonStyle={styles.optionButtonStyle}
         titleStyle={styles.optionTitleStyle}
         onPress={() => {
-          dispatch(setHomeMenuOption(2));
-          alert("Coming soon...");
-          // navigation.navigate("QuestionAnswerScreen");
+          dispatch(setHomeMenuOption(Constants.MENU_OPTION_TWO));
+
+          // -->
+          dispatch(setQuestChoiceAnsData(sapCertificationQuestAnsData));
+
+          // // -->
+          dispatch(setQuestionTracker([]));
+
+          // alert("Coming soon...");
+          navigation.navigate("QuestionAnswerScreen");
         }}
       />
     </View>
