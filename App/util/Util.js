@@ -157,6 +157,55 @@ const isMyAnswerToQuestionCorrect = ({
 
 // ******************************************************************
 /**
+ * Checked if answers are correct or wrong
+ * @param {*} param0
+ * @returns
+ */
+const isMyAnswerToQuestionCorrect_V2 = ({ choices }) => {
+  let isBoolean = true,
+    isStart = null,
+    markedCount = 0,
+    isChoiceCorrectCount = 0;
+
+  choices.map(({ choice, marked, isChoiceCorrect }) => {
+    // console.log(
+    //   "\t[Util.js]choice: ",
+    //   choice,
+    //   "\tMarked: ",
+    //   marked,
+    //   "\tisChoiceCorrect: ",
+    //   isChoiceCorrect,
+    //   "\t(!isChoiceCorrect && marked): ",
+    //   !isChoiceCorrect && marked
+    // );
+    if (!isChoiceCorrect && marked) {
+      if (isStart == null) {
+        isStart = true;
+        isBoolean = false;
+      }
+    }
+
+    if (isStart == null) {
+      if (marked) {
+        markedCount++;
+      }
+      if (isChoiceCorrect) {
+        isChoiceCorrectCount++;
+      }
+    }
+  });
+
+  if (isStart == null && isChoiceCorrectCount == markedCount) {
+    return Constants.FULL_CORRECT_ANSWER;
+  } else if (isStart == null) {
+    return Constants.HALF_CORRECT_ANSWER;
+  }
+
+  return Constants.WRONG_ANSWER;
+};
+
+// ******************************************************************
+/**
  * Checks If I selected some choices
  * @param {*} param0
  * @returns
@@ -193,4 +242,5 @@ export {
   markedChoices,
   isMyAnswerToQuestionCorrect,
   isMyAnswerEmpty,
+  isMyAnswerToQuestionCorrect_V2,
 };

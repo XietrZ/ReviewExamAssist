@@ -20,10 +20,11 @@ import {
 import {
   generateUniqueRandomNumber,
   isMyAnswerEmpty,
-  isMyAnswerToQuestionCorrect,
+  isMyAnswerToQuestionCorrect_V2,
   markedChoices,
 } from "../util/Util";
 import Constants from "../constants/Constants";
+import QuestionChoiceComponent from "../components/QuestionChoiceComponent";
 
 const QuestionAnswerScreen = () => {
   const navigation = useNavigation();
@@ -87,7 +88,7 @@ const QuestionAnswerScreen = () => {
               navigation.navigate("HomeScreen");
             }}
           >
-            <Entypo name="home" size={30} color={Colors.hot_pink} />
+            <Entypo name="home" size={35} color={Colors.hot_pink} />
           </TouchableOpacity>
 
           {/*  */}
@@ -97,127 +98,29 @@ const QuestionAnswerScreen = () => {
           )}
 
           {/* Question and Choices  */}
-          {questChoiceAnsData.length > 0 &&
-            questionTracker.length > 0 &&
-            questChoiceAnsData.map((data, index) => {
-              console.log("[QuestionAnswerScreen.js]index: ", index);
-              console.log("[QuestionAnswerScreen.js]data: ", data);
-              const { num } = questionTracker[selectedQuestionIndex];
-              if (index == num) {
-                const { id, question, choices, numInReviewer } = data;
-                const id_1 = id;
-                return (
-                  <View key={id}>
-                    {/* Question */}
-                    <View style={styles.questionContainerWrapper}>
-                      <Text style={styles.questionTitleWrapper}>
-                        Question #{selectedQuestionIndex + 1}
-                      </Text>
+          {!isShowAnswers && (
+            <QuestionChoiceComponent
+              isShowAnswers={isShowAnswers}
+              selectedQuestionIndex={selectedQuestionIndex}
+            />
+          )}
 
-                      <View style={styles.questionContentWrapper}>
-                        <Text style={{ fontSize: 25 }}>{question}</Text>
-                      </View>
-                      <Text># in Reviewer: {numInReviewer}</Text>
-                    </View>
-
-                    {/* Choice */}
-                    {choices.map(({ id, choice, marked, isChoiceCorrect }) => {
-                      const id_2 = id;
-                      return (
-                        <View key={id} style={styles.choiceWrapper}>
-                          {/* Show Check Answers */}
-                          {isShowAnswers && isChoiceCorrect && (
-                            <Entypo name="check" size={30} color="green" />
-                          )}
-
-                          {/* Show Wrong Answers */}
-                          {isShowAnswers && !isChoiceCorrect && (
-                            <Entypo name="cross" size={30} color="red" />
-                          )}
-
-                          <TouchableOpacity
-                            style={[
-                              {
-                                flexDirection: "row",
-                                alignItems: "center",
-                                flex: 1,
-                              },
-                              isShowAnswers ? { opacity: 0.4 } : { opacity: 1 },
-                            ]}
-                            onPress={() => {
-                              markedChoices({
-                                questChoiceAnsData,
-                                id_1,
-                                id_2,
-                                marked,
-                                dispatch,
-                              });
-                            }}
-                            disabled={isShowAnswers}
-                          >
-                            {/* Radio Button of Choices */}
-                            <RadioButton
-                              value="first"
-                              color={Colors.radioButton_gray}
-                              uncheckedColor={Colors.radioButton_gray}
-                              onPress={() => {
-                                markedChoices({
-                                  questChoiceAnsData,
-                                  id_1,
-                                  id_2,
-                                  marked,
-                                  dispatch,
-                                });
-                              }}
-                              status={marked ? "checked" : "unchecked"}
-
-                              // status="checked"
-                            />
-
-                            {/* Choices Text */}
-                            <View style={styles.choiceContainerTextWrapper}>
-                              <Text style={styles.choiceTextWrapper}>
-                                {choice}
-                              </Text>
-                            </View>
-                          </TouchableOpacity>
-                        </View>
-                      );
-                    })}
-
-                    {/* Text Label if Answer is Correct or Wrong! */}
-
-                    {isShowAnswers && (
-                      <View
-                        style={
-                          styles.textLabelIfAnswerIsCorrectWrongContainerWrapper
-                        }
-                      >
-                        <Text
-                          style={[
-                            styles.textLabelIfAnswerIsCorrectWrongWrapper,
-                            isAnswerCorrect == Constants.WRONG_ANSWER
-                              ? { color: "red" }
-                              : { color: "green" },
-                          ]}
-                        >
-                          {isAnswerCorrect == Constants.WRONG_ANSWER
-                            ? "Your answer is Wrong!"
-                            : isAnswerCorrect == Constants.HALF_CORRECT_ANSWER
-                            ? "Your answer is only HALF correct"
-                            : "Your answer is Correct!"}
-                        </Text>
-                      </View>
-                    )}
-                  </View>
-                );
-              }
+          {isShowAnswers &&
+            homeMenuOption == Constants.MENU_OPTION_TWO &&
+            questionTracker.map((data, index) => {
+              return (
+                <QuestionChoiceComponent
+                  key={index}
+                  isShowAnswers={isShowAnswers}
+                  selectedQuestionIndex={index}
+                />
+              );
             })}
 
           {/* Buttons */}
-          <View style={styles.buttonsContainerWrapper}>
+          <View style={[styles.buttonsContainerWrapper]}>
             {/* Show Answers Button */}
-            {!isShowAnswers && (
+            {!isShowAnswers && homeMenuOption == Constants.MENU_OPTION_ONE && (
               <Button
                 title="Show Answers"
                 buttonStyle={styles.buttonStyleWrapper}
@@ -262,13 +165,41 @@ const QuestionAnswerScreen = () => {
                       questionTracker,
                     })
                   ) {
-                    setAnswerCorrect(
-                      isMyAnswerToQuestionCorrect({
-                        questChoiceAnsData,
-                        selectedQuestionIndex,
-                        questionTracker,
-                      })
-                    );
+                    // setAnswerCorrect(
+                    //   isMyAnswerToQuestionCorrect({
+                    //     questChoiceAnsData,
+                    //     selectedQuestionIndex,
+                    //     questionTracker,
+                    //   })
+                    // );
+                    setShowAnswers(true);
+                  } else {
+                    alert("Please select answer");
+                  }
+                }}
+              />
+            )}
+
+            {/* Show Answers Button */}
+            {!isShowAnswers && homeMenuOption == Constants.MENU_OPTION_TWO && (
+              <Button
+                title="Show All Answers"
+                buttonStyle={styles.buttonStyleWrapper}
+                titleStyle={styles.buttonTitleStyleWrapper}
+                disabled={
+                  selectedQuestionIndex >= questionTracker.length - 1
+                    ? false
+                    : true
+                }
+                onPress={() => {
+                  // -->
+                  if (
+                    !isMyAnswerEmpty({
+                      questChoiceAnsData,
+                      selectedQuestionIndex,
+                      questionTracker,
+                    })
+                  ) {
                     setShowAnswers(true);
                   } else {
                     alert("Please select answer");
@@ -286,6 +217,11 @@ const QuestionAnswerScreen = () => {
                 onPress={() => {
                   setShowAnswers(false);
                 }}
+                disabled={
+                  isShowAnswers && homeMenuOption == Constants.MENU_OPTION_TWO
+                    ? true
+                    : false
+                }
               />
             )}
 
@@ -303,7 +239,16 @@ const QuestionAnswerScreen = () => {
                 containerStyle={{ marginRight: 8, width: 80 }}
                 onPress={() => {
                   setShowAnswers(false);
-                  dispatch(setSelectedQuestionIndex(selectedQuestionIndex - 1));
+                  if (
+                    isShowAnswers &&
+                    homeMenuOption == Constants.MENU_OPTION_TWO
+                  ) {
+                    dispatch(setSelectedQuestionIndex(selectedQuestionIndex));
+                  } else {
+                    dispatch(
+                      setSelectedQuestionIndex(selectedQuestionIndex - 1)
+                    );
+                  }
                 }}
               />
 
@@ -319,20 +264,39 @@ const QuestionAnswerScreen = () => {
                 titleStyle={styles.buttonTitleStyleWrapper}
                 containerStyle={{ width: 80 }}
                 onPress={() => {
-                  setShowAnswers(false);
-                  dispatch(setSelectedQuestionIndex(selectedQuestionIndex + 1));
+                  if (
+                    !isMyAnswerEmpty({
+                      questChoiceAnsData,
+                      selectedQuestionIndex,
+                      questionTracker,
+                    })
+                  ) {
+                    setShowAnswers(false);
+                    dispatch(
+                      setSelectedQuestionIndex(selectedQuestionIndex + 1)
+                    );
+                  } else {
+                    alert("Please select answer");
+                  }
                 }}
               />
             </View>
           </View>
 
           {/* Done  Text/Label Indicator */}
-          {selectedQuestionIndex >= questionTracker.length - 1 && (
-            <View style={styles.doneTextLabelContainerWrapper}>
+          {((homeMenuOption == Constants.MENU_OPTION_ONE &&
+            selectedQuestionIndex >= questionTracker.length - 1) ||
+            (homeMenuOption == Constants.MENU_OPTION_TWO && isShowAnswers)) && (
+            <TouchableOpacity
+              style={styles.doneTextLabelContainerWrapper}
+              onPress={() => {
+                navigation.navigate("HomeScreen");
+              }}
+            >
               <Text style={styles.doneTextWrapper}>
-                DONE! Click home Icon to go back to Main Menu
+                DONE! Click home Icon or Click Here to go back to Main Menu
               </Text>
-            </View>
+            </TouchableOpacity>
           )}
         </SafeAreaView>
       )}

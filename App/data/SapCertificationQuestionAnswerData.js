@@ -29,25 +29,25 @@ const sapCertificationQuestAnsData = [
     choices: [
       {
         id: 1,
-        choice: "As one master server and multiple slave servers",
+        choice: "A. As one master server and multiple slave servers",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 2,
-        choice: "As a cluster of co-equal master servers",
+        choice: "B. As a cluster of co-equal master servers",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 3,
-        choice: "As a standalone server",
+        choice: "C. As a standalone server",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 4,
-        choice: "As embedded with the hybris server",
+        choice: "D. As embedded with the hybris server",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
@@ -62,33 +62,33 @@ const sapCertificationQuestAnsData = [
       {
         id: 1,
         choice:
-          "CronJobs can be started and aborted automatically if a configurable",
+          "A. CronJobs can be started and aborted automatically if a configurable",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 2,
         choice:
-          "CronJobs can be started and aborted only if implemented as abortable.",
+          "B. CronJobs can be started and aborted only if implemented as abortable.",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 3,
-        choice: "CronJobs can be started manually using flexible search",
+        choice: "C. CronJobs can be started manually using flexible search",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 4,
         choice:
-          'CronJobs can be started manually via the command line by invoking "ant runcronjob"',
+          'D. CronJobs can be started manually via the command line by invoking "ant runcronjob"',
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 5,
-        choice: "CronJobs can be started manually via the Backoffice",
+        choice: "E. CronJobs can be started manually via the Backoffice",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
