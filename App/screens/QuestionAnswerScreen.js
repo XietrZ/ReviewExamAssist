@@ -98,7 +98,8 @@ const QuestionAnswerScreen = () => {
           )}
 
           {/* Question and Choices  */}
-          {!isShowAnswers && (
+          {(!isShowAnswers ||
+            (isShowAnswers && homeMenuOption == Constants.MENU_OPTION_ONE)) && (
             <QuestionChoiceComponent
               isShowAnswers={isShowAnswers}
               selectedQuestionIndex={selectedQuestionIndex}
