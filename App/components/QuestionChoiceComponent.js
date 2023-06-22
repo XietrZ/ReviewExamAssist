@@ -130,9 +130,9 @@ const QuestionChoiceComponent = ({ isShowAnswers, selectedQuestionIndex }) => {
                         styles.textLabelIfAnswerIsCorrectWrongWrapper,
                         isMyAnswerToQuestionCorrect_V2({
                           choices,
-                        }) == Constants.WRONG_ANSWER
-                          ? { color: "red" }
-                          : { color: "green" },
+                        }) == Constants.FULL_CORRECT_ANSWER
+                          ? { color: "green" }
+                          : { color: "red" },
                       ]}
                     >
                       {isMyAnswerToQuestionCorrect_V2({

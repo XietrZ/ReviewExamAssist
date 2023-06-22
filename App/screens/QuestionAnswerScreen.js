@@ -229,7 +229,11 @@ const QuestionAnswerScreen = () => {
             {/* Prev Button */}
             <View style={styles.leftButtonsContainerWrapper}>
               <Button
-                title="Prev"
+                title={
+                  isShowAnswers && homeMenuOption == Constants.MENU_OPTION_TWO
+                    ? "Back"
+                    : "Prev"
+                }
                 disabled={
                   selectedQuestionIndex && selectedQuestionIndex > 0
                     ? false
@@ -254,33 +258,37 @@ const QuestionAnswerScreen = () => {
               />
 
               {/* Next Button */}
-              <Button
-                title="Next"
-                disabled={
-                  selectedQuestionIndex < questionTracker.length - 1
-                    ? false
-                    : true
-                }
-                buttonStyle={styles.buttonStyleWrapper}
-                titleStyle={styles.buttonTitleStyleWrapper}
-                containerStyle={{ width: 80 }}
-                onPress={() => {
-                  if (
-                    !isMyAnswerEmpty({
-                      questChoiceAnsData,
-                      selectedQuestionIndex,
-                      questionTracker,
-                    })
-                  ) {
-                    setShowAnswers(false);
-                    dispatch(
-                      setSelectedQuestionIndex(selectedQuestionIndex + 1)
-                    );
-                  } else {
-                    alert("Please select answer");
+              {!(
+                isShowAnswers && homeMenuOption == Constants.MENU_OPTION_TWO
+              ) && (
+                <Button
+                  title="Next"
+                  disabled={
+                    selectedQuestionIndex < questionTracker.length - 1
+                      ? false
+                      : true
                   }
-                }}
-              />
+                  buttonStyle={styles.buttonStyleWrapper}
+                  titleStyle={styles.buttonTitleStyleWrapper}
+                  containerStyle={{ width: 80 }}
+                  onPress={() => {
+                    if (
+                      !isMyAnswerEmpty({
+                        questChoiceAnsData,
+                        selectedQuestionIndex,
+                        questionTracker,
+                      })
+                    ) {
+                      setShowAnswers(false);
+                      dispatch(
+                        setSelectedQuestionIndex(selectedQuestionIndex + 1)
+                      );
+                    } else {
+                      alert("Please select answer");
+                    }
+                  }}
+                />
+              )}
             </View>
           </View>
 
