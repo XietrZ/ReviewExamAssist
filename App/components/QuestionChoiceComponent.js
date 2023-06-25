@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View, Image } from "react-native";
 import React from "react";
 import styles from "../stylesheets/QuestionChoiceComponent.style";
 import { useDispatch, useSelector } from "react-redux";
@@ -31,19 +31,33 @@ const QuestionChoiceComponent = ({ isShowAnswers, selectedQuestionIndex }) => {
           const { num } = questionTracker[selectedQuestionIndex];
           if (index == num) {
             // if (true) {
-            const { id, question, choices, numInReviewer } = data;
+            const { id, question, questionImg, choices, numInReviewer } = data;
             const id_1 = id;
             return (
               <View key={id}>
                 {/* Question */}
                 <View style={styles.questionContainerWrapper}>
+                  {/* question number */}
                   <Text style={styles.questionTitleWrapper}>
                     Question #{selectedQuestionIndex + 1}
                   </Text>
 
+                  {/* question */}
                   <View style={styles.questionContentWrapper}>
                     <Text style={{ fontSize: 25 }}>{question}</Text>
+                    <Text style={{ fontSize: 25 }}>{question}</Text>
+                    <Text style={{ fontSize: 25 }}>{question}</Text>
+                    <Text style={{ fontSize: 25 }}>{question}</Text>
+                    <Text style={{ fontSize: 25 }}>{question}</Text>
+                    {questionImg && (
+                      <Image
+                        source={require("../assets/images/numinreviewer-7-2023-06-25.png")}
+                        resizeMode="contain"
+                      />
+                    )}
                   </View>
+
+                  {/* number in reviewer */}
                   <Text># in Reviewer: {numInReviewer}</Text>
                 </View>
 

@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
   },
   questionContainerWrapper: {
     // backgroundColor: "blue",
-    height: 201,
+    // height: 201,
     borderWidth: 10,
     marginTop: 10,
     marginHorizontal: 16,
@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     flex: 1,
+    paddingVertical: 20,
   },
 
   choiceWrapper: {
