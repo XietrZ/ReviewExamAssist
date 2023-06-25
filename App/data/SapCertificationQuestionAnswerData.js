@@ -168,7 +168,7 @@ const sapCertificationQuestAnsData = [
     id: 5,
     numInReviewer: 7,
     question: null,
-    questionImg: "../assets/images/numinreviewer-7-2023=06-25.png",
+    questionImg: require("../assets/images/numinreviewer-7-2023-06-25.png"),
     choices: [
       {
         id: 1,

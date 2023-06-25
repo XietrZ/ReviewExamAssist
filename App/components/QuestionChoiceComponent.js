@@ -1,4 +1,11 @@
-import { StyleSheet, Text, TouchableOpacity, View, Image } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  Image,
+  Dimensions,
+} from "react-native";
 import React from "react";
 import styles from "../stylesheets/QuestionChoiceComponent.style";
 import { useDispatch, useSelector } from "react-redux";
@@ -19,7 +26,7 @@ const QuestionChoiceComponent = ({ isShowAnswers, selectedQuestionIndex }) => {
   const homeMenuOption = useSelector(selectHomeMenuOption);
   const questChoiceAnsData = useSelector(selectQuestChoiceAnsData);
   const questionTracker = useSelector(selectQuestionTracker);
-
+  const screen = Dimensions.get("window");
   return (
     <View style={styles.container}>
       {/* Question and Choices  */}
@@ -45,13 +52,15 @@ const QuestionChoiceComponent = ({ isShowAnswers, selectedQuestionIndex }) => {
                   {/* question */}
                   <View style={styles.questionContentWrapper}>
                     <Text style={{ fontSize: 25 }}>{question}</Text>
-                    <Text style={{ fontSize: 25 }}>{question}</Text>
-                    <Text style={{ fontSize: 25 }}>{question}</Text>
-                    <Text style={{ fontSize: 25 }}>{question}</Text>
-                    <Text style={{ fontSize: 25 }}>{question}</Text>
+
                     {questionImg && (
                       <Image
-                        source={require("../assets/images/numinreviewer-7-2023-06-25.png")}
+                        style={{
+                          height: 300,
+                          resizeMode: "contain",
+                          width: screen.width,
+                        }}
+                        source={questionImg}
                         resizeMode="contain"
                       />
                     )}

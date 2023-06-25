@@ -6,7 +6,7 @@
   id: ?,
   numInReviewer: ?,
   question: ?,
-  questionImg: ?,
+  questionImg: require("?"),
   choices: [
     {
       id: ?,
