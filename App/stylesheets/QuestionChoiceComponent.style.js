@@ -18,9 +18,8 @@ const styles = StyleSheet.create({
     // backgroundColor: "red",
     // justifyContent: "center",
     // alignItems: "center",
-    marginTop: 5,
     marginLeft: 5,
-    alignSelf: "center",
+    // alignSelf: "center",
   },
 
   questionContentWrapper: {

@@ -98,7 +98,7 @@ const sapCertificationQuestAnsData = [
     id: 3,
     numInReviewer: 4,
     question:
-      "4.	Which is correct site for the following. Something like this: (?i)^https?://hybris.store(:[\\d]+)?/us(|/.|\\?.)$",
+      "Which is correct site for the following. Something like this: (?i)^https?://hybris.store(:[\\d]+)?/us(|/.|\\?.)$",
     choices: [
       {
         id: 1,
@@ -410,7 +410,7 @@ const sapCertificationQuestAnsData = [
   {
     id: 12,
     numInReviewer: 16,
-    question: "16.	DEFINITION WIDGET (3 TRUE)",
+    question: "DEFINITION WIDGET (3 TRUE)",
     questionImg: null,
     choices: [
       {
@@ -1101,7 +1101,7 @@ const sapCertificationQuestAnsData = [
     id: 31,
     numInReviewer: 38,
     question:
-      "38.	Which condition must be met in order to connect two widgets by a widget-connection?",
+      "Which condition must be met in order to connect two widgets by a widget-connection?",
     questionImg: null,
     choices: [
       {
@@ -1362,7 +1362,7 @@ const sapCertificationQuestAnsData = [
     id: 38,
     numInReviewer: 56,
     question:
-      "hich interface do you re-implement to select different PriceRows for cart calculation?",
+      "Which interface do you re-implement to select different PriceRows for cart calculation?",
     questionImg: null,
     choices: [
       {
@@ -1431,7 +1431,7 @@ const sapCertificationQuestAnsData = [
   {
     id: 40,
     numInReviewer: 58,
-    question: "58.	What can be use for the view of BackOffice",
+    question: "What can be use for the view of BackOffice",
     questionImg: null,
     choices: [
       {

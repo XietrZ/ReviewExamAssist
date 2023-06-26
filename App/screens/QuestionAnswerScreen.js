@@ -20,6 +20,7 @@ import {
   setSelectedQuestionIndex,
 } from "../slices/globalSlice";
 import {
+  generateDefaultSequenceOfQuestions,
   generateUniqueRandomNumber,
   isMyAnswerEmpty,
   isMyAnswerToQuestionCorrect_V2,
@@ -45,15 +46,17 @@ const QuestionAnswerScreen = () => {
 
   //--> Track the score
   const trackTheScore = () => {
-    questChoiceAnsData.map(({ choices }) => {
-      if (
-        isMyAnswerToQuestionCorrect_V2({
-          choices,
-        }) == Constants.FULL_CORRECT_ANSWER
-      ) {
-        dispatch(setScoreTracking(scoreTracking + 1));
-      }
-    });
+    if (homeMenuOption == Constants.MENU_OPTION_TWO) {
+      questChoiceAnsData.map(({ choices }) => {
+        if (
+          isMyAnswerToQuestionCorrect_V2({
+            choices,
+          }) == Constants.FULL_CORRECT_ANSWER
+        ) {
+          dispatch(setScoreTracking(scoreTracking + 1));
+        }
+      });
+    }
   };
 
   // --> Show Score
@@ -83,11 +86,15 @@ const QuestionAnswerScreen = () => {
   useEffect(() => {
     console.log("[QuestionAnswerScreen.js] useEffect()");
     if (questionTracker.length == 0) {
-      generateUniqueRandomNumber({
-        questionTracker,
-        questChoiceAnsData,
-        dispatch,
-      });
+      // // --> Show Questions in Random manner
+      // generateUniqueRandomNumber({
+      //   questionTracker,
+      //   questChoiceAnsData,
+      //   dispatch,
+      // });
+
+      // --> Show question in default sequence saved in data
+      generateDefaultSequenceOfQuestions({ questChoiceAnsData, dispatch });
     }
   }, []);
 

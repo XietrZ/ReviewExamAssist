@@ -64,6 +64,18 @@ const generateUniqueRandomNumber = ({ questChoiceAnsData, dispatch }) => {
     }
   }
 };
+// ******************************************************************
+const generateDefaultSequenceOfQuestions = ({
+  questChoiceAnsData,
+  dispatch,
+}) => {
+  let tempDataArray = [];
+  questChoiceAnsData.map((data, index) => {
+    tempDataArray.push({ num: index });
+  });
+  dispatch(setQuestionTracker(tempDataArray));
+  dispatch(setSelectedQuestionIndex(0));
+};
 
 // ******************************************************************
 /**
@@ -239,6 +251,7 @@ const isMyAnswerEmpty = ({
 
 export {
   generateUniqueRandomNumber,
+  generateDefaultSequenceOfQuestions,
   markedChoices,
   isMyAnswerToQuestionCorrect,
   isMyAnswerEmpty,

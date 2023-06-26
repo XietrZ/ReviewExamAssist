@@ -24,8 +24,8 @@ const HomeScreen = () => {
   const questChoiceAnsData = useSelector(selectQuestChoiceAnsData);
   const initialize = () => {
     // -->
-    // dispatch(setQuestChoiceAnsData(sapCertificationQuestAnsData));
-    dispatch(setQuestChoiceAnsData(tempData));
+    dispatch(setQuestChoiceAnsData(sapCertificationQuestAnsData));
+    // dispatch(setQuestChoiceAnsData(tempData));
 
     // // -->
     dispatch(setQuestionTracker([]));

@@ -49,10 +49,23 @@ const QuestionChoiceComponent = ({ isShowAnswers, selectedQuestionIndex }) => {
               <View key={id}>
                 {/* Question */}
                 <View style={styles.questionContainerWrapper}>
-                  {/* question number */}
-                  <Text style={styles.questionTitleWrapper}>
-                    Question #{selectedQuestionIndex + 1}
-                  </Text>
+                  <View
+                    style={{
+                      // backgroundColor: "red",
+                      flexDirection: "row",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      marginTop: 5,
+                    }}
+                  >
+                    {/* question number */}
+                    <Text style={styles.questionTitleWrapper}>
+                      Question #{selectedQuestionIndex + 1}
+                    </Text>
+                    <Text style={{ fontSize: 8, marginLeft: 10 }}>
+                      (out of {questChoiceAnsData.length})
+                    </Text>
+                  </View>
 
                   {/* question */}
                   <View style={styles.questionContentWrapper}>
@@ -72,7 +85,9 @@ const QuestionChoiceComponent = ({ isShowAnswers, selectedQuestionIndex }) => {
                   </View>
 
                   {/* number in reviewer */}
-                  <Text># in Reviewer: {numInReviewer}</Text>
+                  <Text style={{ marginBottom: 5, marginLeft: 5 }}>
+                    # in Reviewer: {numInReviewer}
+                  </Text>
                 </View>
 
                 {/* Choice */}
