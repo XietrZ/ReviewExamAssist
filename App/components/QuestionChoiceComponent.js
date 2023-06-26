@@ -13,7 +13,9 @@ import {
   selectHomeMenuOption,
   selectQuestChoiceAnsData,
   selectQuestionTracker,
+  selectScoreTracking,
   selectSelectedQuestionIndex,
+  setScoreTracking,
 } from "../slices/globalSlice";
 import Constants from "../constants/Constants";
 import Colors from "../constants/Color";
@@ -26,6 +28,8 @@ const QuestionChoiceComponent = ({ isShowAnswers, selectedQuestionIndex }) => {
   const homeMenuOption = useSelector(selectHomeMenuOption);
   const questChoiceAnsData = useSelector(selectQuestChoiceAnsData);
   const questionTracker = useSelector(selectQuestionTracker);
+  const scoreTracking = useSelector(selectScoreTracking);
+
   const screen = Dimensions.get("window");
   return (
     <View style={styles.container}>
@@ -40,6 +44,7 @@ const QuestionChoiceComponent = ({ isShowAnswers, selectedQuestionIndex }) => {
             // if (true) {
             const { id, question, questionImg, choices, numInReviewer } = data;
             const id_1 = id;
+
             return (
               <View key={id}>
                 {/* Question */}

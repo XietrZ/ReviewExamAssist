@@ -11,16 +11,31 @@ import {
   setHomeMenuOption,
   setQuestChoiceAnsData,
   setQuestionTracker,
+  setScoreTracking,
 } from "../slices/globalSlice";
 import sapCertificationQuestAnsData from "../data/SapCertificationQuestionAnswerData";
 import Constants from "../constants/Constants";
+import tempData from "../data/TempData";
 
 const HomeScreen = () => {
   const navigation = useNavigation();
   const dispatch = useDispatch();
   const questionTracker = useSelector(selectQuestionTracker);
   const questChoiceAnsData = useSelector(selectQuestChoiceAnsData);
+  const initialize = () => {
+    // -->
+    // dispatch(setQuestChoiceAnsData(sapCertificationQuestAnsData));
+    dispatch(setQuestChoiceAnsData(tempData));
 
+    // // -->
+    dispatch(setQuestionTracker([]));
+
+    // -->
+    dispatch(setScoreTracking(0));
+
+    // -->
+    navigation.navigate("QuestionAnswerScreen");
+  };
   return (
     <View style={styles.container}>
       <Text style={styles.titleTextWrapper}>ReviewExamAssist</Text>
@@ -34,25 +49,7 @@ const HomeScreen = () => {
           // -->
           dispatch(setHomeMenuOption(Constants.MENU_OPTION_ONE));
 
-          // -->
-          dispatch(setQuestChoiceAnsData(sapCertificationQuestAnsData));
-
-          // // -->
-          dispatch(setQuestionTracker([]));
-          // if (
-          //   questionTracker &&
-          //   questChoiceAnsData &&
-          //   questionTracker.length == questChoiceAnsData.length
-          // ) {
-          //   dispatch(setQuestionTracker([]));
-          // } else {
-          //   dispatch(setQuestionTracker([...questionTracker, { num: 1 }]));
-          // }
-
-          // -->
-
-          // -->
-          navigation.navigate("QuestionAnswerScreen");
+          initialize();
         }}
       />
       <Button
@@ -64,14 +61,7 @@ const HomeScreen = () => {
         onPress={() => {
           dispatch(setHomeMenuOption(Constants.MENU_OPTION_TWO));
 
-          // -->
-          dispatch(setQuestChoiceAnsData(sapCertificationQuestAnsData));
-
-          // // -->
-          dispatch(setQuestionTracker([]));
-
-          // alert("Coming soon...");
-          navigation.navigate("QuestionAnswerScreen");
+          initialize();
         }}
       />
     </View>

@@ -13,8 +13,10 @@ import {
   selectHomeMenuOption,
   selectQuestChoiceAnsData,
   selectQuestionTracker,
+  selectScoreTracking,
   selectSelectedQuestionIndex,
   setQuestChoiceAnsData,
+  setScoreTracking,
   setSelectedQuestionIndex,
 } from "../slices/globalSlice";
 import {
@@ -37,8 +39,46 @@ const QuestionAnswerScreen = () => {
   const questChoiceAnsData = useSelector(selectQuestChoiceAnsData);
   const questionTracker = useSelector(selectQuestionTracker);
   const selectedQuestionIndex = useSelector(selectSelectedQuestionIndex);
+  const scoreTracking = useSelector(selectScoreTracking);
 
   console.log("[QuestionAnswerScreen.js] Render QuestionAnswerScreen ");
+
+  //--> Track the score
+  const trackTheScore = () => {
+    questChoiceAnsData.map(({ choices }) => {
+      if (
+        isMyAnswerToQuestionCorrect_V2({
+          choices,
+        }) == Constants.FULL_CORRECT_ANSWER
+      ) {
+        dispatch(setScoreTracking(scoreTracking + 1));
+      }
+    });
+  };
+
+  // --> Show Score
+  const showScore = () => {
+    if (isShowAnswers && homeMenuOption == Constants.MENU_OPTION_TWO) {
+      return (
+        <View
+          style={{
+            paddingHorizontal: 16,
+            paddingVertical: 10,
+            marginTop: 10,
+            justifyContent: "flex-start",
+            width: 250,
+            borderTopEndRadius: 10,
+            borderBottomRightRadius: 10,
+            backgroundColor: Colors.yelloww,
+          }}
+        >
+          <Text style={{ fontSize: 35, fontWeight: 700 }}>
+            SCORE: {scoreTracking}/{questChoiceAnsData.length}
+          </Text>
+        </View>
+      );
+    }
+  };
 
   useEffect(() => {
     console.log("[QuestionAnswerScreen.js] useEffect()");
@@ -90,6 +130,9 @@ const QuestionAnswerScreen = () => {
           >
             <Entypo name="home" size={35} color={Colors.hot_pink} />
           </TouchableOpacity>
+
+          {/* Show Score */}
+          {showScore()}
 
           {/*  */}
           {console.log(
@@ -181,10 +224,10 @@ const QuestionAnswerScreen = () => {
               />
             )}
 
-            {/* Show Answers Button */}
+            {/* Show ALL Answers Button */}
             {!isShowAnswers && homeMenuOption == Constants.MENU_OPTION_TWO && (
               <Button
-                title="Show All Answers"
+                title="Show ALL Answers"
                 buttonStyle={styles.buttonStyleWrapper}
                 titleStyle={styles.buttonTitleStyleWrapper}
                 disabled={
@@ -202,6 +245,7 @@ const QuestionAnswerScreen = () => {
                     })
                   ) {
                     setShowAnswers(true);
+                    trackTheScore();
                   } else {
                     alert("Please select answer");
                   }
@@ -291,6 +335,9 @@ const QuestionAnswerScreen = () => {
               )}
             </View>
           </View>
+
+          {/* Show Score */}
+          {showScore()}
 
           {/* Done  Text/Label Indicator */}
           {((homeMenuOption == Constants.MENU_OPTION_ONE &&
