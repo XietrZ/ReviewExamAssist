@@ -1,5 +1,5 @@
 import { FlatList, StyleSheet, TouchableOpacity, View } from "react-native";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import styles from "../stylesheets/QuestionAnswerScreen.style";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Button, Icon, Text } from "@rneui/themed";
@@ -44,7 +44,9 @@ const QuestionAnswerScreen = () => {
 
   console.log("[QuestionAnswerScreen.js] Render QuestionAnswerScreen ");
 
-  //--> Track the score
+  /**
+   * Track the score
+   */
   const trackTheScore = () => {
     if (homeMenuOption == Constants.MENU_OPTION_TWO) {
       questChoiceAnsData.map(({ choices }) => {
@@ -59,7 +61,10 @@ const QuestionAnswerScreen = () => {
     }
   };
 
-  // --> Show Score
+  /**
+   * Show Score
+   * @returns
+   */
   const showScore = () => {
     if (isShowAnswers && homeMenuOption == Constants.MENU_OPTION_TWO) {
       return (
@@ -96,8 +101,168 @@ const QuestionAnswerScreen = () => {
       // --> Show question in default sequence saved in data
       generateDefaultSequenceOfQuestions({ questChoiceAnsData, dispatch });
     }
-  }, []);
+  }, [questionTracker]);
 
+  /**
+   * Handle what happens on key press
+   */
+  const handleKeyPress = useCallback(
+    (event) => {
+      console.log(`Key pressed: ${event.key}`);
+      console.log("(event.key=='q'): ", event.key == "q");
+      console.log("(event.key=='w'): ", event.key == "w");
+      console.log("(event.key=='e'): ", event.key == "e");
+      console.log(
+        "[QuestionAnswerScreen,js] handleKeyPressed questChoiceAnsData: ",
+        questChoiceAnsData
+      );
+
+      console.log(
+        "[QuestionAnswerScreen.js] handleKeyPressed questionTracker: ",
+        questionTracker
+      );
+
+      console.log(
+        "[QuestionAnswerScreen.js] handleKeyPressed selectedQuestionIndex: ",
+        selectedQuestionIndex
+      );
+
+      if (questionTracker.length > 0) {
+        if (event.key == "q") {
+          if (!isShowAnswers && homeMenuOption == Constants.MENU_OPTION_ONE) {
+            console.log(
+              "[QuestionAnswerScreen.js] handleKeyPressed executeShowAnswersButton()"
+            );
+            executeShowAnswersButton();
+          } else if (
+            !isShowAnswers &&
+            homeMenuOption == Constants.MENU_OPTION_TWO
+          ) {
+            console.log(
+              "[QuestionAnswerScreen.js] handleKeyPressed executeShowAllAnswersButton();"
+            );
+            executeShowAllAnswersButton();
+          } else if (isShowAnswers) {
+            console.log(
+              "[QuestionAnswerScreen.js] handleKeyPressed executeHideAnswersButton();"
+            );
+            executeHideAnswersButton();
+          }
+        } else if (
+          event.key == "w" &&
+          selectedQuestionIndex &&
+          selectedQuestionIndex > 0
+        ) {
+          console.log(
+            "[QuestionAnswerScreen.js] handleKeyPressed executePrevButton();"
+          );
+          executePrevButton();
+        } else if (
+          event.key == "e" &&
+          selectedQuestionIndex < questionTracker.length - 1
+        ) {
+          console.log(
+            "[QuestionAnswerScreen.js] handleKeyPressed executeNextButton();"
+          );
+          executeNextButton();
+        }
+      }
+    },
+    [questionTracker, questChoiceAnsData, selectedQuestionIndex, isShowAnswers]
+  );
+  // --> Attach event listener when key pressed
+  useEffect(() => {
+    // attach the event listener
+    document.addEventListener("keydown", handleKeyPress);
+
+    // remove the event listener
+    return () => {
+      document.removeEventListener("keydown", handleKeyPress);
+    };
+  }, [handleKeyPress]);
+
+  /**
+   * Show answer for only 1 question
+   */
+  const executeShowAnswersButton = () => {
+    // -->
+    if (
+      !isMyAnswerEmpty({
+        questChoiceAnsData,
+        selectedQuestionIndex,
+        questionTracker,
+      })
+    ) {
+      // setAnswerCorrect(
+      //   isMyAnswerToQuestionCorrect({
+      //     questChoiceAnsData,
+      //     selectedQuestionIndex,
+      //     questionTracker,
+      //   })
+      // );
+      setShowAnswers(true);
+    } else {
+      alert("Please select answer");
+    }
+  };
+
+  /**
+   * Show ALL Answers
+   */
+  const executeShowAllAnswersButton = () => {
+    // -->
+    if (
+      !isMyAnswerEmpty({
+        questChoiceAnsData,
+        selectedQuestionIndex,
+        questionTracker,
+      })
+    ) {
+      setShowAnswers(true);
+      trackTheScore();
+    } else {
+      alert("Please select answer");
+    }
+  };
+
+  /**
+   * Hide answers
+   */
+  const executeHideAnswersButton = () => {
+    setShowAnswers(false);
+  };
+
+  /**
+   * Execute prev button when clicked or pressed
+   */
+  const executePrevButton = () => {
+    setShowAnswers(false);
+    if (isShowAnswers && homeMenuOption == Constants.MENU_OPTION_TWO) {
+      dispatch(setSelectedQuestionIndex(selectedQuestionIndex));
+    } else {
+      dispatch(setSelectedQuestionIndex(selectedQuestionIndex - 1));
+    }
+  };
+
+  /**
+   * Execute next button when clicked or pressed
+   */
+  const executeNextButton = () => {
+    if (
+      !isMyAnswerEmpty({
+        questChoiceAnsData,
+        selectedQuestionIndex,
+        questionTracker,
+      })
+    ) {
+      setShowAnswers(false);
+      dispatch(setSelectedQuestionIndex(selectedQuestionIndex + 1));
+    } else {
+      alert("Please select answer");
+    }
+  };
+
+  // --> For printing at consle.log() for debugging purposes
   console.log(
     "[QuestionAnswerScreen.js] questChoiceAnsData ID: ",
     questChoiceAnsData[0].id
@@ -177,56 +342,7 @@ const QuestionAnswerScreen = () => {
                 buttonStyle={styles.buttonStyleWrapper}
                 titleStyle={styles.buttonTitleStyleWrapper}
                 onPress={() => {
-                  // const newData = questChoiceAnsData.map((item) => {
-                  //   if (item.id == 2) {
-                  //     return { ...item, numInReviewer: 999 };
-                  //   }
-                  //   return item;
-                  // });
-                  // dispatch(setQuestChoiceAnsData(newData));
-
-                  // console.log(
-                  //   "[QuestionAnswerScreen,js] questChoiceAnsData NEW: ",
-                  //   questChoiceAnsData
-                  // );
-
-                  // console.log(
-                  //   "[QuestionAnswerScreen.js] isMyAnswerToQuestionCorrect: ",
-                  //   isMyAnswerToQuestionCorrect({
-                  //     questChoiceAnsData,
-                  //     selectedQuestionIndex,
-                  //     questionTracker,
-                  //   })
-                  // );
-
-                  // console.log(
-                  //   "[QuestionAnswerScreen.js] isMyAnswerEmpty: ",
-                  //   isMyAnswerEmpty({
-                  //     questChoiceAnsData,
-                  //     selectedQuestionIndex,
-                  //     questionTracker,
-                  //   })
-                  // );
-
-                  // -->
-                  if (
-                    !isMyAnswerEmpty({
-                      questChoiceAnsData,
-                      selectedQuestionIndex,
-                      questionTracker,
-                    })
-                  ) {
-                    // setAnswerCorrect(
-                    //   isMyAnswerToQuestionCorrect({
-                    //     questChoiceAnsData,
-                    //     selectedQuestionIndex,
-                    //     questionTracker,
-                    //   })
-                    // );
-                    setShowAnswers(true);
-                  } else {
-                    alert("Please select answer");
-                  }
+                  executeShowAnswersButton();
                 }}
               />
             )}
@@ -243,19 +359,7 @@ const QuestionAnswerScreen = () => {
                     : true
                 }
                 onPress={() => {
-                  // -->
-                  if (
-                    !isMyAnswerEmpty({
-                      questChoiceAnsData,
-                      selectedQuestionIndex,
-                      questionTracker,
-                    })
-                  ) {
-                    setShowAnswers(true);
-                    trackTheScore();
-                  } else {
-                    alert("Please select answer");
-                  }
+                  executeShowAllAnswersButton();
                 }}
               />
             )}
@@ -267,7 +371,7 @@ const QuestionAnswerScreen = () => {
                 buttonStyle={styles.buttonStyleWrapper}
                 titleStyle={styles.buttonTitleStyleWrapper}
                 onPress={() => {
-                  setShowAnswers(false);
+                  executeHideAnswersButton();
                 }}
                 disabled={
                   isShowAnswers && homeMenuOption == Constants.MENU_OPTION_TWO
@@ -294,17 +398,7 @@ const QuestionAnswerScreen = () => {
                 titleStyle={styles.buttonTitleStyleWrapper}
                 containerStyle={{ marginRight: 8, width: 80 }}
                 onPress={() => {
-                  setShowAnswers(false);
-                  if (
-                    isShowAnswers &&
-                    homeMenuOption == Constants.MENU_OPTION_TWO
-                  ) {
-                    dispatch(setSelectedQuestionIndex(selectedQuestionIndex));
-                  } else {
-                    dispatch(
-                      setSelectedQuestionIndex(selectedQuestionIndex - 1)
-                    );
-                  }
+                  executePrevButton();
                 }}
               />
 
@@ -323,20 +417,7 @@ const QuestionAnswerScreen = () => {
                   titleStyle={styles.buttonTitleStyleWrapper}
                   containerStyle={{ width: 80 }}
                   onPress={() => {
-                    if (
-                      !isMyAnswerEmpty({
-                        questChoiceAnsData,
-                        selectedQuestionIndex,
-                        questionTracker,
-                      })
-                    ) {
-                      setShowAnswers(false);
-                      dispatch(
-                        setSelectedQuestionIndex(selectedQuestionIndex + 1)
-                      );
-                    } else {
-                      alert("Please select answer");
-                    }
+                    executeNextButton();
                   }}
                 />
               )}
@@ -361,6 +442,16 @@ const QuestionAnswerScreen = () => {
               </Text>
             </TouchableOpacity>
           )}
+
+          {/* Keyboard Tip Key */}
+          <View style={{ marginTop: 50, marginLeft: 20 }}>
+            <Text>Tips for Using Web:</Text>
+            <View style={{ marginTop: 10, marginLeft: 20 }}>
+              <Text>Press 'q' to execute show or hide answers</Text>
+              <Text>Press 'w' to execute prev button</Text>
+              <Text>Press 'e' to execute next button</Text>
+            </View>
+          </View>
         </SafeAreaView>
       )}
       keyExtractor={(item) => item.id}
