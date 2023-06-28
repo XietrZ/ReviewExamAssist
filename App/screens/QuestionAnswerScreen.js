@@ -444,7 +444,7 @@ const QuestionAnswerScreen = () => {
           )}
 
           {/* Keyboard Tip Key */}
-          <View style={{ marginTop: 50, marginLeft: 20 }}>
+          <View style={{ marginTop: 50, marginLeft: 20, marginBottom: 50 }}>
             <Text>Tips for Using Web:</Text>
             <View style={{ marginTop: 10, marginLeft: 20 }}>
               <Text>Press 'q' to execute show or hide answers</Text>
