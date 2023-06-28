@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   },
 
   questionContentWrapper: {
-    // textAlign: "center",
+    textAlign: "center",
     // textAlignVertical: "center",
     // backgroundColor: "red",
     marginTop: 5,
