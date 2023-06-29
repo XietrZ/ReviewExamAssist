@@ -7,6 +7,8 @@ const initialState = {
   questChoiceAnsData: null,
   selectedQuestionIndex: null,
   scoreTracking: null,
+  sequenceQuestions: null,
+  sequenceChoices: null,
 };
 
 // -->
@@ -29,6 +31,12 @@ const globalSlice = createSlice({
     setScoreTracking: (state, action) => {
       state.scoreTracking = action.payload;
     },
+    setSequenceQuestions: (state, action) => {
+      state.sequenceQuestions = action.payload;
+    },
+    setSequenceChoices: (state, action) => {
+      state.sequenceChoices = action.payload;
+    },
   },
 });
 
@@ -39,6 +47,8 @@ export const {
   setQuestChoiceAnsData,
   setSelectedQuestionIndex,
   setScoreTracking,
+  setSequenceQuestions,
+  setSequenceChoices,
 } = globalSlice.actions;
 
 // -->
@@ -49,6 +59,9 @@ export const selectQuestChoiceAnsData = (state) =>
 export const selectSelectedQuestionIndex = (state) =>
   state.global.selectedQuestionIndex;
 export const selectScoreTracking = (state) => state.global.scoreTracking;
+export const selectSequenceQuestions = (state) =>
+  state.global.sequenceQuestions;
+export const selectSequenceChoices = (state) => state.global.sequenceChoices;
 
 // -->
 export default globalSlice.reducer;

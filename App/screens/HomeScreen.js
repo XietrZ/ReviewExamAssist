@@ -12,6 +12,8 @@ import {
   setQuestChoiceAnsData,
   setQuestionTracker,
   setScoreTracking,
+  setSequenceChoices,
+  setSequenceQuestions,
 } from "../slices/globalSlice";
 import sapCertificationQuestAnsData from "../data/SapCertificationQuestionAnswerData";
 import Constants from "../constants/Constants";
@@ -23,11 +25,22 @@ const HomeScreen = () => {
   const questionTracker = useSelector(selectQuestionTracker);
   const questChoiceAnsData = useSelector(selectQuestChoiceAnsData);
   const initialize = () => {
-    // -->
-    dispatch(setQuestChoiceAnsData(sapCertificationQuestAnsData));
-    // dispatch(setQuestChoiceAnsData(tempData));
+    // ***********************OPTIONS********************************************
+    // --> Set what question data to show
+    // dispatch(setQuestChoiceAnsData(sapCertificationQuestAnsData));
+    dispatch(setQuestChoiceAnsData(tempData));
 
-    // // -->
+    //--> Set if questions will show randomly or default
+    // dispatch(setSequenceQuestions(Constants.SEQUENCE_RANDOM));
+    dispatch(setSequenceQuestions(Constants.SEQUENCE_DEFAULT));
+
+    //--> Set if choices will show randomly or default
+    dispatch(setSequenceChoices(Constants.SEQUENCE_RANDOM));
+    // dispatch(setSequenceChoices(Constants.SEQUENCE_DEFAULT));
+
+    // ***********************OPTIONS********************************************
+
+    // -->
     dispatch(setQuestionTracker([]));
 
     // -->

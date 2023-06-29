@@ -15,6 +15,8 @@ import {
   selectQuestionTracker,
   selectScoreTracking,
   selectSelectedQuestionIndex,
+  selectSequenceChoices,
+  selectSequenceQuestions,
   setQuestChoiceAnsData,
   setScoreTracking,
   setSelectedQuestionIndex,
@@ -41,6 +43,8 @@ const QuestionAnswerScreen = () => {
   const questionTracker = useSelector(selectQuestionTracker);
   const selectedQuestionIndex = useSelector(selectSelectedQuestionIndex);
   const scoreTracking = useSelector(selectScoreTracking);
+  const sequenceQuestions = useSelector(selectSequenceQuestions);
+  const sequenceChoices = useSelector(selectSequenceChoices);
 
   console.log("[QuestionAnswerScreen.js] Render QuestionAnswerScreen ");
 
@@ -91,15 +95,22 @@ const QuestionAnswerScreen = () => {
   useEffect(() => {
     console.log("[QuestionAnswerScreen.js] useEffect()");
     if (questionTracker.length == 0) {
-      // --> Show Questions in Random manner
-      generateRandomSequenceOfQuestions({
-        questionTracker,
-        questChoiceAnsData,
-        dispatch,
-      });
-
-      // // --> Show question in default sequence saved in data
-      // generateDefaultSequenceOfQuestions({ questChoiceAnsData, dispatch });
+      if (sequenceQuestions == Constants.SEQUENCE_RANDOM) {
+        // --> Show Questions in Random manner
+        generateRandomSequenceOfQuestions({
+          questionTracker,
+          questChoiceAnsData,
+          sequenceChoices,
+          dispatch,
+        });
+      } else if (sequenceQuestions == Constants.SEQUENCE_DEFAULT) {
+        // --> Show question in default sequence saved in data
+        generateDefaultSequenceOfQuestions({
+          questChoiceAnsData,
+          sequenceChoices,
+          dispatch,
+        });
+      }
     }
   }, [questionTracker]);
 

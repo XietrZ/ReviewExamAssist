@@ -65,6 +65,7 @@ const generateRandomNumbersAndStoreInArrayBasedFromLength = (length) => {
 const generateRandomSequenceOfQuestions = ({
   questChoiceAnsData,
   dispatch,
+  sequenceChoices,
 }) => {
   if (questChoiceAnsData != null) {
     let count = 0;
@@ -91,7 +92,11 @@ const generateRandomSequenceOfQuestions = ({
 
       if (tempDataArray.length == 0) {
         const { choices } = questChoiceAnsData[randomNumber];
-        const tempChoiceArray = generateChoicesArrays(choices.length);
+        const length = choices.length;
+        const tempChoiceArray = generateChoicesArrays({
+          length,
+          sequenceChoices,
+        });
         tempDataArray.push({
           num: randomNumber,
           choicesIndex: tempChoiceArray,
@@ -106,7 +111,11 @@ const generateRandomSequenceOfQuestions = ({
 
         if (count == tempDataArray.length) {
           const { choices } = questChoiceAnsData[randomNumber];
-          const tempChoiceArray = generateChoicesArrays(choices.length);
+          const length = choices.length;
+          const tempChoiceArray = generateChoicesArrays({
+            length,
+            sequenceChoices,
+          });
           tempDataArray.push({
             num: randomNumber,
             choicesIndex: tempChoiceArray,
@@ -130,11 +139,13 @@ const generateRandomSequenceOfQuestions = ({
 const generateDefaultSequenceOfQuestions = ({
   questChoiceAnsData,
   dispatch,
+  sequenceChoices,
 }) => {
   let tempDataArray = [];
   questChoiceAnsData.map((data, index) => {
     const { choices } = data;
-    const tempChoiceArray = generateChoicesArrays(choices.length);
+    const length = choices.length;
+    const tempChoiceArray = generateChoicesArrays({ length, sequenceChoices });
     tempDataArray.push({ num: index, choicesIndex: tempChoiceArray });
   });
   dispatch(setQuestionTracker(tempDataArray));
@@ -142,11 +153,21 @@ const generateDefaultSequenceOfQuestions = ({
 };
 
 // ******************************************************************
-const generateChoicesArrays = (length) => {
-  // const tempArray =
-  //   generateDefaultSequenceNumbersAndStoreInArrayBasedFromLength(length);
-
-  const tempArray = generateRandomNumbersAndStoreInArrayBasedFromLength(length);
+const generateChoicesArrays = ({ length, sequenceChoices }) => {
+  let tempArray = [];
+  // console.log(
+  //   "[Util.js] generateChoicesArrays = ({ length, sequenceChoices }) => {"
+  // );
+  // console.log(
+  //   "[Util.js] generateChoicesArrays sequenceChoices: ",
+  //   sequenceChoices
+  // );
+  if (sequenceChoices == Constants.SEQUENCE_DEFAULT) {
+    tempArray =
+      generateDefaultSequenceNumbersAndStoreInArrayBasedFromLength(length);
+  } else if (sequenceChoices == Constants.SEQUENCE_RANDOM) {
+    tempArray = generateRandomNumbersAndStoreInArrayBasedFromLength(length);
+  }
 
   return tempArray;
 };

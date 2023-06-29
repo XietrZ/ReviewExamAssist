@@ -8,25 +8,25 @@ const tempData = [
     choices: [
       {
         id: 1,
-        choice: "A. maxEntries",
+        choice: "maxEntries",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 2,
-        choice: "B. capacity",
+        choice: "capacity",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 3,
-        choice: "C. evictionPolicy",
+        choice: "evictionPolicy",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 4,
-        choice: "D. statsEnabled",
+        choice: "statsEnabled",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
@@ -34,38 +34,38 @@ const tempData = [
   },
   //   -----------------------------------------------------------
   {
-    id: 2,
+    id: 22,
     numInReviewer: 3,
     question:
       "Base Stores configuratoon. Note: there are 3 correct answers to this question ",
     choices: [
       {
         id: 1,
-        choice: "A. POINTS OF SERVICE",
+        choice: "POINTS OF SERVICE",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 2,
-        choice: "B. WAREHOUSE",
+        choice: "WAREHOUSE",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 3,
-        choice: "C. CUSTOMERS",
+        choice: "CUSTOMERS",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 4,
-        choice: "D. DISCOUNTS",
+        choice: "DISCOUNTS",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 5,
-        choice: "E. WEBSITES",
+        choice: "WEBSITES",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
@@ -76,29 +76,29 @@ const tempData = [
     id: 3,
     numInReviewer: 4,
     question:
-      "4.	Which is correct site for the following. Something like this: (?i)^https?://hybris.store(:[\\d]+)?/us(|/.|\\?.)$",
+      "Which is correct site for the following. Something like this: (?i)^https?://hybris.store(:[\\d]+)?/us(|/.|\\?.)$",
     choices: [
       {
         id: 1,
-        choice: "A. https://electronics-site/",
+        choice: "https://electronics-site/",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 2,
-        choice: "B. https://electronics/?site=base",
+        choice: "https://electronics/?site=base",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 3,
-        choice: "C. https://?something",
+        choice: "https://?something",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 4,
-        choice: "D. https://?something",
+        choice: "https://?something",
         marked: false,
         isChoiceCorrect: false, // true or false
       },

@@ -29,25 +29,25 @@ const sapCertificationQuestAnsData = [
     choices: [
       {
         id: 1,
-        choice: "A. maxEntries",
+        choice: "maxEntries",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 2,
-        choice: "B. capacity",
+        choice: "capacity",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 3,
-        choice: "C. evictionPolicy",
+        choice: "evictionPolicy",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 4,
-        choice: "D. statsEnabled",
+        choice: "statsEnabled",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
@@ -63,31 +63,31 @@ const sapCertificationQuestAnsData = [
     choices: [
       {
         id: 1,
-        choice: "A. POINTS OF SERVICE",
+        choice: "POINTS OF SERVICE",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 2,
-        choice: "B. WAREHOUSE",
+        choice: "WAREHOUSE",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 3,
-        choice: "C. CUSTOMERS",
+        choice: "CUSTOMERS",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 4,
-        choice: "D. DISCOUNTS",
+        choice: "DISCOUNTS",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 5,
-        choice: "E. WEBSITES",
+        choice: "WEBSITES",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
@@ -102,25 +102,25 @@ const sapCertificationQuestAnsData = [
     choices: [
       {
         id: 1,
-        choice: "A. https://electronics-site/",
+        choice: "https://electronics-site/",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 2,
-        choice: "B. https://electronics/?site=base",
+        choice: "https://electronics/?site=base",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 3,
-        choice: "C. https://?something",
+        choice: "https://?something",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 4,
-        choice: "D. https://?something",
+        choice: "https://?something",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
@@ -135,28 +135,28 @@ const sapCertificationQuestAnsData = [
       {
         id: 1,
         choice:
-          "A. Set the expressCheckoutEnabled attribute to true on Customers registered on the Basesite",
+          "Set the expressCheckoutEnabled attribute to true on Customers registered on the Basesite",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 2,
         choice:
-          "B. Set the expressCheckoutEnabled attribute to true for the CMS Catalog on the Basesite.",
+          "Set the expressCheckoutEnabled attribute to true for the CMS Catalog on the Basesite.",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 3,
         choice:
-          "C. Set the expressCheckoutEnabled attribute to true for the BaseStore configured on the Basesite",
+          "Set the expressCheckoutEnabled attribute to true for the BaseStore configured on the Basesite",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 4,
         choice:
-          "D. Set the expressCheckoutEnabled attribute to true for customers supported by the Basesite",
+          "Set the expressCheckoutEnabled attribute to true for customers supported by the Basesite",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
@@ -173,28 +173,26 @@ const sapCertificationQuestAnsData = [
       {
         id: 1,
         choice:
-          'A. A table "barlp" is created and used to store the localized data',
+          'A table "barlp" is created and used to store the localized data',
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 2,
         choice:
-          'B. An existing "genericitems" table is used to store the localized data',
+          'An existing "genericitems" table is used to store the localized data',
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 3,
-        choice:
-          'C. An existing "props" table is used to store the localized data',
+        choice: 'An existing "props" table is used to store the localized data',
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 4,
-        choice:
-          'D. A table "bar" is created and used to store the localized data',
+        choice: 'A table "bar" is created and used to store the localized data',
         marked: false,
         isChoiceCorrect: false, // true or false
       },
@@ -209,20 +207,20 @@ const sapCertificationQuestAnsData = [
     choices: [
       {
         id: 1,
-        choice: "A. The flexible search query returns a SQL exception.",
+        choice: "The flexible search query returns a SQL exception.",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 2,
         choice:
-          'B. The flexible search query returns "PinkCandle" because the restriction applies on Product and not on VariantProduct',
+          'The flexible search query returns "PinkCandle" because the restriction applies on Product and not on VariantProduct',
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 3,
-        choice: "B. The flexible search query returns an empty list.",
+        choice: "The flexible search query returns an empty list.",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
@@ -238,25 +236,25 @@ const sapCertificationQuestAnsData = [
     choices: [
       {
         id: 1,
-        choice: "A. An impex script for full load",
+        choice: "An impex script for full load",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 2,
-        choice: "B. A flexible search query for a full load",
+        choice: "A flexible search query for a full load",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 3,
-        choice: "C. A flexible search query for an incremental update",
+        choice: "A flexible search query for an incremental update",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 4,
-        choice: "D. A solr configuration file",
+        choice: "A solr configuration file",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
@@ -267,34 +265,34 @@ const sapCertificationQuestAnsData = [
     id: 8,
     numInReviewer: 11,
     question:
-      "A SolrIndexProperty allows you to define facets. You want to define facet ranges instead of simple facets. You already created a new solr indexed property of a facet What do you need to do next to define the facet ranges? ",
+      "A SolrIndexProperty allows you to define facets. You want to define facet ranges instead of simple facets. You already created a new solr indexed property of a facet. What do you need to do next to define the facet ranges? ",
     questionImg: null,
     choices: [
       {
         id: 1,
         choice:
-          "A. Define the cadence of the ranges in the solr index property. Provide the sample data that is used to define the solr value rangeset",
+          "Define the cadence of the ranges in the solr index property. Provide the sample data that is used to define the solr value rangeset",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 2,
         choice:
-          "B. reate solrvaluerange items to define the range boundaries. Create a solrvaluerange set, add solr valuerange items and add to the solrindex property",
+          "Create solrvaluerange items to define the range boundaries. Create a solrvaluerange set, add solr valuerange items and add to the solrindex property",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 3,
         choice:
-          "C. Define the number of ranges in the solrindexproperty. Provide the sample data that is used to generate the solr value range items",
+          "Define the number of ranges in the solrindexproperty. Provide the sample data that is used to generate the solr value range items",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 4,
         choice:
-          "D. Define a list of upper range boundaries in the solrindexproperty. Trigger the generation of solrvaluerange items from the backoffice",
+          "Define a list of upper range boundaries in the solrindexproperty. Trigger the generation of solrvaluerange items from the backoffice",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
@@ -352,7 +350,7 @@ const sapCertificationQuestAnsData = [
         id: 2,
         choice: "B. Extend the AbstractEvent class.",
         marked: false,
-        isChoiceCorrect: true, // true or false
+        isChoiceCorrect: false, // true or false
       },
       {
         id: 3,
