@@ -26,6 +26,7 @@ const HomeScreen = () => {
   const questChoiceAnsData = useSelector(selectQuestChoiceAnsData);
   const initialize = () => {
     // ***********************OPTIONS********************************************
+
     // --> Set what question data to show
     // dispatch(setQuestChoiceAnsData(sapCertificationQuestAnsData));
     dispatch(setQuestChoiceAnsData(tempData));

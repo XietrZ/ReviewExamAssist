@@ -307,25 +307,25 @@ const sapCertificationQuestAnsData = [
     choices: [
       {
         id: 1,
-        choice: "A. As one master server and multiple slave servers",
+        choice: "As one master server and multiple slave servers",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 2,
-        choice: "B. As a cluster of co-equal master servers",
+        choice: "As a cluster of co-equal master servers",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 3,
-        choice: "C. As a standalone server",
+        choice: "As a standalone server",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 4,
-        choice: "D. As embedded with the hybris server",
+        choice: "As embedded with the hybris server",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
@@ -342,25 +342,25 @@ const sapCertificationQuestAnsData = [
       {
         id: 1,
         choice:
-          "A. Change the platformClusterEventSender Spring bean configuration.",
+          "Change the platformClusterEventSender Spring bean configuration.",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 2,
-        choice: "B. Extend the AbstractEvent class.",
+        choice: "Extend the AbstractEvent class.",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 3,
-        choice: "C. Implement the TransactionAwareEvent interface.",
+        choice: "Implement the TransactionAwareEvent interface.",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 4,
-        choice: "D. Implement the ClusterAwareEvent interface.",
+        choice: "Implement the ClusterAwareEvent interface.",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
@@ -377,28 +377,28 @@ const sapCertificationQuestAnsData = [
       {
         id: 1,
         choice:
-          "A. Both Staged and Online Media items will refer to the same image file on the file system.",
+          "Both Staged and Online Media items will refer to the same image file on the file system.",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 2,
         choice:
-          "B. The values of the attribute of the source item in the Staged catalog are copied to the target item in the Online catalog.",
+          "The values of the attribute of the source item in the Staged catalog are copied to the target item in the Online catalog.",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 3,
         choice:
-          "C. The Staged and Online media items will refer to two different image files on the filesystem.",
+          "The Staged and Online media items will refer to two different image files on the filesystem.",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 4,
         choice:
-          "D. The different formats of the Staged media item image will be automatically synchronized to the Online catalog version.",
+          "The different formats of the Staged media item image will be automatically synchronized to the Online catalog version.",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
@@ -413,31 +413,31 @@ const sapCertificationQuestAnsData = [
     choices: [
       {
         id: 1,
-        choice: "A. DEFAULTTITLE",
+        choice: "DEFAULTTITLE",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 2,
-        choice: "B. SETTINGS",
+        choice: "SETTINGS",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 3,
-        choice: "C. CONTROLLERCLASS",
+        choice: "CONTROLLERCLASS",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 4,
-        choice: "D. •	SOCKETS VIRTUAL AVAILABLES",
+        choice: "SOCKETS VIRTUAL AVAILABLES",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 5,
-        choice: "E. SOCKETS AVAILABLES",
+        choice: "SOCKETS AVAILABLES",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
@@ -452,33 +452,33 @@ const sapCertificationQuestAnsData = [
       {
         id: 1,
         choice:
-          "A. CronJobs can be started and aborted automatically if a configurable",
+          "CronJobs can be started and aborted automatically if a configurable",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 2,
         choice:
-          "B. CronJobs can be started and aborted only if implemented as abortable.",
+          "CronJobs can be started and aborted only if implemented as abortable.",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 3,
-        choice: "C. CronJobs can be started manually using flexible search",
+        choice: "CronJobs can be started manually using flexible search",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 4,
         choice:
-          'D. CronJobs can be started manually via the command line by invoking "ant runcronjob"',
+          'CronJobs can be started manually via the command line by invoking "ant runcronjob"',
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 5,
-        choice: "E. CronJobs can be started manually via the Backoffice",
+        choice: "CronJobs can be started manually via the Backoffice",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
@@ -493,25 +493,25 @@ const sapCertificationQuestAnsData = [
     choices: [
       {
         id: 1,
-        choice: "A. N:M NEW TABLE",
+        choice: "N:M NEW TABLE",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 2,
-        choice: "B. 1:N NEW COLUMN",
+        choice: "1:N NEW COLUMN",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 3,
-        choice: "C. N:M BINARY",
+        choice: "N:M BINARY",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 4,
-        choice: "D. 1:N ORDERED = TRUE",
+        choice: "1:N ORDERED = TRUE",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
@@ -526,31 +526,31 @@ const sapCertificationQuestAnsData = [
     choices: [
       {
         id: 1,
-        choice: "A. USAGE",
+        choice: "USAGE",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 2,
-        choice: "B. POSITION",
+        choice: "POSITION",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 3,
-        choice: "C. VIEW",
+        choice: "VIEW",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 4,
-        choice: "D. PRINCIPAL",
+        choice: "PRINCIPAL",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 5,
-        choice: "E. TYPE",
+        choice: "TYPE",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
@@ -567,28 +567,28 @@ const sapCertificationQuestAnsData = [
       {
         id: 1,
         choice:
-          "A. By modifying the CoreSystemSetup class in the yacceleratorcore extension.",
+          "By modifying the CoreSystemSetup class in the yacceleratorcore extension.",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 2,
         choice:
-          "B. By modifying the @SystemSetup annotation in the platform exteion.",
+          "By modifying the @SystemSetup annotation in the platform exteion.",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 3,
         choice:
-          "C. By modifying the InitialDataSystemSetup class in the yacceleratorinitialdata extension",
+          "By modifying the InitialDataSystemSetup class in the yacceleratorinitialdata extension",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 4,
         choice:
-          "D. By creating a file with the name sampledata impex in the yacceleratorcore extension.",
+          "By creating a file with the name sampledata impex in the yacceleratorcore extension.",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
@@ -605,27 +605,27 @@ const sapCertificationQuestAnsData = [
       {
         id: 1,
         choice:
-          "A. New item types are automatically deployed into their own tables",
+          "New item types are automatically deployed into their own tables",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 2,
         choice:
-          "B. All instances of the enclosing type are stored in specific database table",
+          "All instances of the enclosing type are stored in specific database table",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 3,
         choice:
-          "C. The deployment typecode is used as part of primary key {pk} to the table",
+          "The deployment typecode is used as part of primary key {pk} to the table",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 4,
-        choice: "D. The name of the deployment table is generated",
+        choice: "The name of the deployment table is generated",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
@@ -641,25 +641,25 @@ const sapCertificationQuestAnsData = [
     choices: [
       {
         id: 1,
-        choice: "A. Register Users ",
+        choice: "Register Users ",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 2,
-        choice: "B. Delete Expired Cards",
+        choice: "Delete Expired Cards",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 3,
-        choice: "C. Cancel Consignments ",
+        choice: "Cancel Consignments ",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 4,
-        choice: "D. Refund of orders ",
+        choice: "Refund of orders ",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
@@ -674,19 +674,19 @@ const sapCertificationQuestAnsData = [
     choices: [
       {
         id: 1,
-        choice: "A. Product page controller",
+        choice: "Product page controller",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 2,
-        choice: "B. xml config",
+        choice: "xml config",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 3,
-        choice: "C. Product page Jsp",
+        choice: "Product page Jsp",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
@@ -703,34 +703,34 @@ const sapCertificationQuestAnsData = [
       {
         id: 1,
         choice:
-          "A. A ContentSlot can be configured with a list of Content Management System(CMS) Components",
+          "A ContentSlot can be configured with a list of Content Management System(CMS) Components",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 2,
-        choice: "B. A ContentSlot can be configured with a list of pages.",
+        choice: "A ContentSlot can be configured with a list of pages.",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 3,
         choice:
-          "C. A ContentSlot can be assigned to a Page using a ContentSlotForPage",
+          "A ContentSlot can be assigned to a Page using a ContentSlotForPage",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 4,
         choice:
-          "D. A ContentSlot can be assigned to a PageTemplate using a ContentSlotForTemplate.",
+          "A ContentSlot can be assigned to a PageTemplate using a ContentSlotForTemplate.",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 5,
         choice:
-          "E. A ContentSlot can be assigned to a Catalog using a ContentSlotForPage.",
+          "A ContentSlot can be assigned to a Catalog using a ContentSlotForPage.",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
@@ -747,26 +747,26 @@ const sapCertificationQuestAnsData = [
       {
         id: 1,
         choice:
-          "A. The Spring application context starts with a warning that bean “WebA” cannot be accessed.",
+          "The Spring application context starts with a warning that bean “WebA” cannot be accessed.",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 2,
-        choice: "B. The Spring application context fails to start",
+        choice: "The Spring application context fails to start",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 3,
-        choice: "C. The Spring application context starts successfully.",
+        choice: "The Spring application context starts successfully.",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 4,
         choice:
-          "D. The Spring tenant context automatically loads all web context beans",
+          "The Spring tenant context automatically loads all web context beans",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
@@ -782,28 +782,28 @@ const sapCertificationQuestAnsData = [
     choices: [
       {
         id: 1,
-        choice: "A. Synchronize the entire catalog version",
+        choice: "Synchronize the entire catalog version",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 2,
         choice:
-          "B. Mark the costOfSale as a partOf attribute of the ProductType and synchronize the product.",
+          "Mark the costOfSale as a partOf attribute of the ProductType and synchronize the product.",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 3,
         choice:
-          "C. Add the CostOfSale into synchronization Root Types and synchronize the product.",
+          "Add the CostOfSale into synchronization Root Types and synchronize the product.",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 4,
         choice:
-          "D. Configure synchronization as copyByValue for the costOfSale attribute and synchronize the product.",
+          "Configure synchronization as copyByValue for the costOfSale attribute and synchronize the product.",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
@@ -819,27 +819,26 @@ const sapCertificationQuestAnsData = [
     choices: [
       {
         id: 1,
-        choice: "A. A search restriction on the Type UserGroup",
+        choice: "A search restriction on the Type UserGroup",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 2,
         choice:
-          "B. An item type access right for the type Product for the user group",
+          "An item type access right for the type Product for the user group",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 3,
-        choice:
-          "C. A search restriction on the type Product for the user group",
+        choice: "A search restriction on the type Product for the user group",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 4,
-        choice: "D. An item type access right for the type UserGroup.",
+        choice: "An item type access right for the type UserGroup.",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
@@ -854,25 +853,25 @@ const sapCertificationQuestAnsData = [
     choices: [
       {
         id: 1,
-        choice: "A. REMOVE EXTENSION IF SOMETHING REMOVED FROM LOCALEXTENSION",
+        choice: "REMOVE EXTENSION IF SOMETHING REMOVED FROM LOCALEXTENSION",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 2,
-        choice: "B. PROPERTIES",
+        choice: "PROPERTIES",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 3,
-        choice: "C. BEANS",
+        choice: "BEANS",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 4,
-        choice: "D. ITEMS",
+        choice: "ITEMS",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
@@ -889,26 +888,26 @@ const sapCertificationQuestAnsData = [
       {
         id: 1,
         choice:
-          "A. NAVIGATIONBARCOLLECTIONCOMPONENT -NAVIGATIONBARCOMPONENT – CMSLINKCOMPONENT",
+          "NAVIGATIONBARCOLLECTIONCOMPONENT -NAVIGATIONBARCOMPONENT – CMSLINKCOMPONENT",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 2,
         choice:
-          "B. NAVIGATIONBARCOLLECTIONCOMPONENT -NAVIGATIONBARCOMPONENT – OTHER ",
+          "NAVIGATIONBARCOLLECTIONCOMPONENT -NAVIGATIONBARCOMPONENT – OTHER ",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 3,
-        choice: "C. NAVIGATIONBARCOMPONENT COMO CHILDREN - CMSLINKCOMPONENT",
+        choice: "NAVIGATIONBARCOMPONENT COMO CHILDREN - CMSLINKCOMPONENT",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 4,
-        choice: "D. OTHER WITH CATEGORY Y HOMEPAGE",
+        choice: "OTHER WITH CATEGORY Y HOMEPAGE",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
@@ -924,31 +923,31 @@ const sapCertificationQuestAnsData = [
     choices: [
       {
         id: 1,
-        choice: "A. SplitByWarehouse",
+        choice: "SplitByWarehouse",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 2,
-        choice: "B. SplitByNamedDeliveryDate",
+        choice: "SplitByNamedDeliveryDate",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 3,
-        choice: "C. Splitbypayment",
+        choice: "Splitbypayment",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 4,
-        choice: "D. splitbyavailableCount",
+        choice: "splitbyavailableCount",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 5,
-        choice: "E. splitByOrderDate",
+        choice: "splitByOrderDate",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
@@ -964,26 +963,25 @@ const sapCertificationQuestAnsData = [
     choices: [
       {
         id: 1,
-        choice: "A. To store the configuration of the rule engine",
+        choice: "To store the configuration of the rule engine",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 2,
-        choice: "B. To eliminate unnecessary data provided by complex objects",
+        choice: "To eliminate unnecessary data provided by complex objects",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 3,
-        choice: "C. To persist the results of the rule evaluation",
+        choice: "To persist the results of the rule evaluation",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 4,
-        choice:
-          "D. To represent the data as facts in Rule conditions and actions",
+        choice: "To represent the data as facts in Rule conditions and actions",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
@@ -999,27 +997,26 @@ const sapCertificationQuestAnsData = [
     choices: [
       {
         id: 1,
-        choice:
-          "A. It is generated from a counter and the type code of the item",
+        choice: "It is generated from a counter and the type code of the item",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 2,
-        choice: "B. It is automatically generated and assigned.",
+        choice: "It is automatically generated and assigned.",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 3,
-        choice: "C. It is generated from the hybris license",
+        choice: "It is generated from the hybris license",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 4,
         choice:
-          "D. It is created manually by setting it in a model of the item prior to saving the item.",
+          "It is created manually by setting it in a model of the item prior to saving the item.",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
@@ -1035,26 +1032,26 @@ const sapCertificationQuestAnsData = [
     choices: [
       {
         id: 1,
-        choice: "A. Create models using the New keyword",
+        choice: "Create models using the New keyword",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 2,
         choice:
-          "B. Save the model using the Model Service after model is modified",
+          "Save the model using the Model Service after model is modified",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 3,
-        choice: "C. Share models between different threads.",
+        choice: "Share models between different threads.",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 4,
-        choice: "D. Create models using modelService.create()",
+        choice: "Create models using modelService.create()",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
@@ -1070,25 +1067,25 @@ const sapCertificationQuestAnsData = [
     choices: [
       {
         id: 1,
-        choice: "A. In the multiplexer widget",
+        choice: "In the multiplexer widget",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 2,
-        choice: "B. In the configurable flow wizard widget",
+        choice: "In the configurable flow wizard widget",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 3,
-        choice: "C. In the editor area widget",
+        choice: "In the editor area widget",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 4,
-        choice: "D. In the property extractor widget",
+        choice: "In the property extractor widget",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
@@ -1105,28 +1102,28 @@ const sapCertificationQuestAnsData = [
       {
         id: 1,
         choice:
-          "A. It must be possible to assign the input sockets type to the output sockets type",
+          "It must be possible to assign the input sockets type to the output sockets type",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 2,
         choice:
-          "B. The output socket and the input socket must be of exactly the same type",
+          "The output socket and the input socket must be of exactly the same type",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 3,
         choice:
-          "C. It must be possible to assign the output sockets type to the input sockets type",
+          "It must be possible to assign the output sockets type to the input sockets type",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 4,
         choice:
-          "D. The type used for the input socket must be a sub type of a composed item type",
+          "The type used for the input socket must be a sub type of a composed item type",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
@@ -1143,28 +1140,28 @@ const sapCertificationQuestAnsData = [
       {
         id: 1,
         choice:
-          "A. Use ant extgen to create an AddOn extension using acceleratoraddon as the template.",
+          "Use ant extgen to create an AddOn extension using acceleratoraddon as the template.",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 2,
         choice:
-          "B. Use ant extgen to create an AddOn extension using yoccaddon as the template",
+          "Use ant extgen to create an AddOn extension using yoccaddon as the template",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 3,
         choice:
-          "C. Use ant extgen to create a new extension using ycommercewebservices as the template",
+          "Use ant extgen to create a new extension using ycommercewebservices as the template",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 4,
         choice:
-          "D. Use ant modulegen to create a new extension using yacceleratorstorefront as the template.",
+          "Use ant modulegen to create a new extension using yacceleratorstorefront as the template.",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
@@ -1180,28 +1177,27 @@ const sapCertificationQuestAnsData = [
     choices: [
       {
         id: 1,
-        choice:
-          "A. Calling the modelservice.save() method passing an item model.",
+        choice: "Calling the modelservice.save() method passing an item model.",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 2,
         choice:
-          "B. Calling the modelservice.create() method passing a model class.",
+          "Calling the modelservice.create() method passing a model class.",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 3,
         choice:
-          "C. Receiving an invalidation event for the item via cluster messaging",
+          "Receiving an invalidation event for the item via cluster messaging",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 4,
-        choice: "D. Calling a setter method on a Model class",
+        choice: "Calling a setter method on a Model class",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
@@ -1217,25 +1213,25 @@ const sapCertificationQuestAnsData = [
     choices: [
       {
         id: 1,
-        choice: "A. After the order has been completely sourced",
+        choice: "After the order has been completely sourced",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 2,
-        choice: "B. At the first stage of the fulfillment process",
+        choice: "At the first stage of the fulfillment process",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 3,
-        choice: "C. After the order has been fraud checked",
+        choice: "After the order has been fraud checked",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 4,
-        choice: "D. After the payment has been processed",
+        choice: "After the payment has been processed",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
@@ -1252,26 +1248,25 @@ const sapCertificationQuestAnsData = [
       {
         id: 1,
         choice:
-          "A. Definition of a new item type in the items.xml file for an extension.",
+          "Definition of a new item type in the items.xml file for an extension.",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 2,
-        choice: "B. Removal of an extension from the localextensions.xml file",
+        choice: "Removal of an extension from the localextensions.xml file",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 3,
-        choice: "C. Addition of a spring bean definition",
+        choice: "Addition of a spring bean definition",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 4,
-        choice:
-          "D. Changes to database properties in the local.properties file.",
+        choice: "Changes to database properties in the local.properties file.",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
@@ -1288,28 +1283,28 @@ const sapCertificationQuestAnsData = [
       {
         id: 1,
         choice:
-          "A. Add a new property to CommerceCartParameter in a beans.xml file.",
+          "Add a new property to CommerceCartParameter in a beans.xml file.",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 2,
         choice:
-          "B. Extend the default strategy called by the method in order to handle the new parameter.",
+          "Extend the default strategy called by the method in order to handle the new parameter.",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 3,
         choice:
-          "C. Overload the existing method of CommerceCartService by adding the new parameter.",
+          "Overload the existing method of CommerceCartService by adding the new parameter.",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 4,
         choice:
-          "D. Extend the default implementation of the method in order to handle the new parameter.",
+          "Extend the default implementation of the method in order to handle the new parameter.",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
@@ -1325,31 +1320,31 @@ const sapCertificationQuestAnsData = [
     choices: [
       {
         id: 1,
-        choice: "A. controllerClass",
+        choice: "controllerClass",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 2,
-        choice: "B. keywords",
+        choice: "keywords",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 3,
-        choice: "C. view-page",
+        choice: "view-page",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 4,
-        choice: "D. defaultTitle",
+        choice: "defaultTitle",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 5,
-        choice: "E. settings",
+        choice: "settings",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
@@ -1365,25 +1360,25 @@ const sapCertificationQuestAnsData = [
     choices: [
       {
         id: 1,
-        choice: "A. FindPriceStrategy",
+        choice: "FindPriceStrategy",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 2,
-        choice: "B. CommerceCartService",
+        choice: "CommerceCartService",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 3,
-        choice: "C. CalculationService",
+        choice: "CalculationService",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 4,
-        choice: "D. Europe1PriceFactory",
+        choice: "Europe1PriceFactory",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
@@ -1400,26 +1395,26 @@ const sapCertificationQuestAnsData = [
       {
         id: 1,
         choice:
-          "A. Changes can be made without loss of classification attributes data.",
+          "Changes can be made without loss of classification attributes data.",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 2,
-        choice: "B. Rebuilding and redeployment are not required",
+        choice: "Rebuilding and redeployment are not required",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 3,
-        choice: "C. Classification attributes can be applied to any type.",
+        choice: "Classification attributes can be applied to any type.",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 4,
         choice:
-          "D. Business users can create or modify classification attributes using the backoffice.",
+          "Business users can create or modify classification attributes using the backoffice.",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
@@ -1434,25 +1429,25 @@ const sapCertificationQuestAnsData = [
     choices: [
       {
         id: 1,
-        choice: "A. XML",
+        choice: "XML",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 2,
-        choice: "B. JSP",
+        choice: "JSP",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 3,
-        choice: "C. Velocity",
+        choice: "Velocity",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 4,
-        choice: "D. Zul",
+        choice: "Zul",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
@@ -1467,27 +1462,27 @@ const sapCertificationQuestAnsData = [
     choices: [
       {
         id: 1,
-        choice: "A. When an administrator approves the order",
+        choice: "When an administrator approves the order",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 2,
         choice:
-          "B. After the order is placed and before it is sourced successfully.",
+          "After the order is placed and before it is sourced successfully.",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 3,
-        choice: "C. When the user adds items to the cart.",
+        choice: "When the user adds items to the cart.",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 4,
         choice:
-          "D. After the order is placed and after it is sourced successfully. ",
+          "After the order is placed and after it is sourced successfully. ",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
@@ -1503,27 +1498,27 @@ const sapCertificationQuestAnsData = [
       {
         id: 1,
         choice:
-          "A. A controller method is defined from the URL using the RequestMapping annotation. This the returns the name of the page.",
+          "A controller method is defined from the URL using the RequestMapping annotation. This the returns the name of the page.",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 2,
-        choice: "B. The path to the page is directly referenced by the URL.",
+        choice: "The path to the page is directly referenced by the URL.",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 3,
         choice:
-          "C. A Façade method is determined from the URL using the naming convention. This then retrieves the name of the page from the database.",
+          "A Façade method is determined from the URL using the naming convention. This then retrieves the name of the page from the database.",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 4,
         choice:
-          "D. The path to the page is determined from a singleton that knows the location of the page based, on the static mapping from URL to page name.",
+          "The path to the page is determined from a singleton that knows the location of the page based, on the static mapping from URL to page name.",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
@@ -1539,25 +1534,25 @@ const sapCertificationQuestAnsData = [
     choices: [
       {
         id: 1,
-        choice: "A. Extend the Accelerator storefront",
+        choice: "Extend the Accelerator storefront",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 2,
-        choice: "B. Extend the backoffice",
+        choice: "Extend the backoffice",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 3,
-        choice: "C. Import sample data by convention",
+        choice: "Import sample data by convention",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 4,
-        choice: "D. Provide a new web application",
+        choice: "Provide a new web application",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
@@ -1573,25 +1568,25 @@ const sapCertificationQuestAnsData = [
     choices: [
       {
         id: 1,
-        choice: "A. Write an inline Groovy script",
+        choice: "Write an inline Groovy script",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 2,
-        choice: "B. Write inline Java code",
+        choice: "Write inline Java code",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 3,
-        choice: "C. Refer to an URI located script",
+        choice: "Refer to an URI located script",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 4,
-        choice: "D. Write an inline script in any programming language",
+        choice: "Write an inline script in any programming language",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
@@ -1608,28 +1603,28 @@ const sapCertificationQuestAnsData = [
       {
         id: 1,
         choice:
-          "A. Setup an additional web spring context by specifying a property in <webappname>.applicationwebspringconfigs in the local.properties file",
+          "Setup an additional web spring context by specifying a property in <webappname>.applicationwebspringconfigs in the local.properties file",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 2,
         choice:
-          "B. Create a module that extends a cockpit application and modify its web.xml",
+          "Create a module that extends a cockpit application and modify its web.xml",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 3,
         choice:
-          "C. Create a custom cockpit spring configuration in the config folder",
+          "Create a custom cockpit spring configuration in the config folder",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 4,
         choice:
-          "D. Customize the global spring context file in the generated cockpit application",
+          "Customize the global spring context file in the generated cockpit application",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
@@ -1645,28 +1640,28 @@ const sapCertificationQuestAnsData = [
       {
         id: 1,
         choice:
-          "A. Its value is stored as a productfeature item in the related deployment table",
+          "Its value is stored as a productfeature item in the related deployment table",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 2,
         choice:
-          "B. Its value is stored in an additional column in the deployment table of the item it is assigned to",
+          "Its value is stored in an additional column in the deployment table of the item it is assigned to",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 3,
         choice:
-          "C. Its value is stored in an additional column in the deployment table of the category defined in the classattribute assignment",
+          "Its value is stored in an additional column in the deployment table of the category defined in the classattribute assignment",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 4,
         choice:
-          "D. Its value is store in the properties table of the product type(productprops)",
+          "Its value is store in the properties table of the product type(productprops)",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
@@ -1681,25 +1676,25 @@ const sapCertificationQuestAnsData = [
     choices: [
       {
         id: 1,
-        choice: "A. customer",
+        choice: "customer",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 2,
-        choice: "B. user group",
+        choice: "user group",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 3,
-        choice: "C. restricted type",
+        choice: "restricted type",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 4,
-        choice: "D. principal",
+        choice: "principal",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
@@ -1716,28 +1711,28 @@ const sapCertificationQuestAnsData = [
       {
         id: 1,
         choice:
-          "A. Invoke the appropriate method of the BusinessProcessService from a script in the hAC scripting console to start the business process.",
+          "Invoke the appropriate method of the BusinessProcessService from a script in the hAC scripting console to start the business process.",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 2,
         choice:
-          "B. Invoke the appropriate method of the BusinessProcessService from Java code to start the busineess process.",
+          "Invoke the appropriate method of the BusinessProcessService from Java code to start the busineess process.",
         marked: false,
         isChoiceCorrect: true, // true or false
       },
       {
         id: 3,
         choice:
-          "C. Use the hMC Business Process section to start the business process.",
+          "Use the hMC Business Process section to start the business process.",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
       {
         id: 4,
         choice:
-          "D. Use the Backoffice Business Process section to start the business process.",
+          "Use the Backoffice Business Process section to start the business process.",
         marked: false,
         isChoiceCorrect: false, // true or false
       },
