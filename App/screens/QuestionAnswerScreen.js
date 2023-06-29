@@ -21,7 +21,7 @@ import {
 } from "../slices/globalSlice";
 import {
   generateDefaultSequenceOfQuestions,
-  generateUniqueRandomNumber,
+  generateRandomSequenceOfQuestions,
   isMyAnswerEmpty,
   isMyAnswerToQuestionCorrect_V2,
   markedChoices,
@@ -91,15 +91,15 @@ const QuestionAnswerScreen = () => {
   useEffect(() => {
     console.log("[QuestionAnswerScreen.js] useEffect()");
     if (questionTracker.length == 0) {
-      // // --> Show Questions in Random manner
-      // generateUniqueRandomNumber({
-      //   questionTracker,
-      //   questChoiceAnsData,
-      //   dispatch,
-      // });
+      // --> Show Questions in Random manner
+      generateRandomSequenceOfQuestions({
+        questionTracker,
+        questChoiceAnsData,
+        dispatch,
+      });
 
-      // --> Show question in default sequence saved in data
-      generateDefaultSequenceOfQuestions({ questChoiceAnsData, dispatch });
+      // // --> Show question in default sequence saved in data
+      // generateDefaultSequenceOfQuestions({ questChoiceAnsData, dispatch });
     }
   }, [questionTracker]);
 
@@ -136,7 +136,8 @@ const QuestionAnswerScreen = () => {
             executeShowAnswersButton();
           } else if (
             !isShowAnswers &&
-            homeMenuOption == Constants.MENU_OPTION_TWO
+            homeMenuOption == Constants.MENU_OPTION_TWO &&
+            selectedQuestionIndex >= questionTracker.length - 1
           ) {
             console.log(
               "[QuestionAnswerScreen.js] handleKeyPressed executeShowAllAnswersButton();"

@@ -9,11 +9,63 @@ import {
 import Constants from "../constants/Constants";
 
 // ******************************************************************
+const generateDefaultSequenceNumbersAndStoreInArrayBasedFromLength = (
+  length
+) => {
+  let tempDataArray = [];
+  let trackLoop = 0;
+
+  for (; trackLoop < length; ) {
+    tempDataArray.push(trackLoop);
+    trackLoop++;
+  }
+  return tempDataArray;
+};
+// ******************************************************************
+const generateRandomNumbersAndStoreInArrayBasedFromLength = (length) => {
+  let tempDataArray = [];
+  let trackLoop = 0;
+
+  console.log(
+    "[Util.js] generateRandomNumbersAndStoreInArrayBasedFromLength = (length) =>{} "
+  );
+  console.log("[Util.js] length: ", length);
+  for (; trackLoop < length; ) {
+    const temp_1 = Math.random();
+    const temp_2 = temp_1 * length;
+    const randomNumber = Math.floor(temp_2);
+    console.log("[Util.js] randomNumber: ", randomNumber);
+
+    if (tempDataArray.length == 0) {
+      tempDataArray.push(randomNumber);
+      trackLoop++;
+    } else {
+      let count = 0;
+      tempDataArray.map((data, index) => {
+        console.log("[Util.js] \tdata: ", data);
+        if (data != randomNumber) {
+          count++;
+        }
+      });
+      if (count == tempDataArray.length) {
+        tempDataArray.push(randomNumber);
+        trackLoop++;
+      }
+    }
+  }
+
+  return tempDataArray;
+};
+
+// ******************************************************************
 /**
  * Generate random numbers to randomly show questions
  * @param {*} param0
  */
-const generateUniqueRandomNumber = ({ questChoiceAnsData, dispatch }) => {
+const generateRandomSequenceOfQuestions = ({
+  questChoiceAnsData,
+  dispatch,
+}) => {
   if (questChoiceAnsData != null) {
     let count = 0;
     let trackLoop = 0;
@@ -38,7 +90,12 @@ const generateUniqueRandomNumber = ({ questChoiceAnsData, dispatch }) => {
       // );
 
       if (tempDataArray.length == 0) {
-        tempDataArray.push({ num: randomNumber });
+        const { choices } = questChoiceAnsData[randomNumber];
+        const tempChoiceArray = generateChoicesArrays(choices.length);
+        tempDataArray.push({
+          num: randomNumber,
+          choicesIndex: tempChoiceArray,
+        });
         trackLoop++;
       } else {
         tempDataArray.map(({ num }) => {
@@ -48,7 +105,12 @@ const generateUniqueRandomNumber = ({ questChoiceAnsData, dispatch }) => {
         });
 
         if (count == tempDataArray.length) {
-          tempDataArray.push({ num: randomNumber });
+          const { choices } = questChoiceAnsData[randomNumber];
+          const tempChoiceArray = generateChoicesArrays(choices.length);
+          tempDataArray.push({
+            num: randomNumber,
+            choicesIndex: tempChoiceArray,
+          });
           trackLoop++;
         }
       }
@@ -71,13 +133,25 @@ const generateDefaultSequenceOfQuestions = ({
 }) => {
   let tempDataArray = [];
   questChoiceAnsData.map((data, index) => {
-    tempDataArray.push({ num: index });
+    const { choices } = data;
+    const tempChoiceArray = generateChoicesArrays(choices.length);
+    tempDataArray.push({ num: index, choicesIndex: tempChoiceArray });
   });
   dispatch(setQuestionTracker(tempDataArray));
   dispatch(setSelectedQuestionIndex(0));
 };
 
 // ******************************************************************
+const generateChoicesArrays = (length) => {
+  // const tempArray =
+  //   generateDefaultSequenceNumbersAndStoreInArrayBasedFromLength(length);
+
+  const tempArray = generateRandomNumbersAndStoreInArrayBasedFromLength(length);
+
+  return tempArray;
+};
+// ******************************************************************
+
 /**
  * This will mark radio button when clicked
  * @param {*} param0
@@ -250,8 +324,9 @@ const isMyAnswerEmpty = ({
 };
 
 export {
-  generateUniqueRandomNumber,
+  generateRandomSequenceOfQuestions,
   generateDefaultSequenceOfQuestions,
+  generateChoicesArrays,
   markedChoices,
   isMyAnswerToQuestionCorrect,
   isMyAnswerEmpty,

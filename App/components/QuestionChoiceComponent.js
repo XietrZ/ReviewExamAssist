@@ -6,7 +6,7 @@ import {
   Image,
   Dimensions,
 } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import styles from "../stylesheets/QuestionChoiceComponent.style";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -29,7 +29,9 @@ const QuestionChoiceComponent = ({ isShowAnswers, selectedQuestionIndex }) => {
   const questChoiceAnsData = useSelector(selectQuestChoiceAnsData);
   const questionTracker = useSelector(selectQuestionTracker);
   const scoreTracking = useSelector(selectScoreTracking);
+  const letterList = ["A", "B", "C", "D", "E"];
 
+  console.log("[QuestionChoiceComponent.js]letterList:  ", letterList);
   const screen = Dimensions.get("window");
   return (
     <View style={styles.container}>
@@ -39,7 +41,7 @@ const QuestionChoiceComponent = ({ isShowAnswers, selectedQuestionIndex }) => {
         questChoiceAnsData.map((data, index) => {
           console.log("[QuestionAnswerScreen.js]index: ", index);
           console.log("[QuestionAnswerScreen.js]data: ", data);
-          const { num } = questionTracker[selectedQuestionIndex];
+          const { num, choicesIndex } = questionTracker[selectedQuestionIndex];
           if (index == num) {
             // if (true) {
             const { id, question, questionImg, choices, numInReviewer } = data;
@@ -90,8 +92,9 @@ const QuestionChoiceComponent = ({ isShowAnswers, selectedQuestionIndex }) => {
                   </Text>
                 </View>
 
-                {/* Choice */}
-                {choices.map(({ id, choice, marked, isChoiceCorrect }) => {
+                {/* Choices */}
+                {choicesIndex.map((data, index) => {
+                  const { id, choice, marked, isChoiceCorrect } = choices[data];
                   const id_2 = id;
                   return (
                     <View key={id} style={styles.choiceWrapper}>
@@ -150,7 +153,11 @@ const QuestionChoiceComponent = ({ isShowAnswers, selectedQuestionIndex }) => {
 
                         {/* Choices Text */}
                         <View style={styles.choiceContainerTextWrapper}>
-                          <Text style={styles.choiceTextWrapper}>{choice}</Text>
+                          <Text style={styles.choiceTextWrapper}>
+                            {letterList[index]}
+                            {". "}
+                            {choice}
+                          </Text>
                         </View>
                       </TouchableOpacity>
                     </View>
