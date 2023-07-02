@@ -53,15 +53,19 @@ const QuestionAnswerScreen = () => {
    */
   const trackTheScore = () => {
     if (homeMenuOption == Constants.MENU_OPTION_TWO) {
+      console.log("[QuestionAnswerScreen.js] Begin tracking the score");
+      let count = 0;
       questChoiceAnsData.map(({ choices }) => {
         if (
           isMyAnswerToQuestionCorrect_V2({
             choices,
           }) == Constants.FULL_CORRECT_ANSWER
         ) {
-          dispatch(setScoreTracking(scoreTracking + 1));
+          console.log("\t[QuestionAnswerScreen.js]scoreTracking: ");
+          count++;
         }
       });
+      dispatch(setScoreTracking(count));
     }
   };
 
@@ -119,45 +123,45 @@ const QuestionAnswerScreen = () => {
    */
   const handleKeyPress = useCallback(
     (event) => {
-      console.log(`Key pressed: ${event.key}`);
-      console.log("(event.key=='q'): ", event.key == "q");
-      console.log("(event.key=='w'): ", event.key == "w");
-      console.log("(event.key=='e'): ", event.key == "e");
-      console.log(
-        "[QuestionAnswerScreen,js] handleKeyPressed questChoiceAnsData: ",
-        questChoiceAnsData
-      );
+      // console.log(`Key pressed: ${event.key}`);
+      // console.log("(event.key=='q'): ", event.key == "q");
+      // console.log("(event.key=='w'): ", event.key == "w");
+      // console.log("(event.key=='e'): ", event.key == "e");
+      // console.log(
+      //   "[QuestionAnswerScreen,js] handleKeyPressed questChoiceAnsData: ",
+      //   questChoiceAnsData
+      // );
 
-      console.log(
-        "[QuestionAnswerScreen.js] handleKeyPressed questionTracker: ",
-        questionTracker
-      );
+      // console.log(
+      //   "[QuestionAnswerScreen.js] handleKeyPressed questionTracker: ",
+      //   questionTracker
+      // );
 
-      console.log(
-        "[QuestionAnswerScreen.js] handleKeyPressed selectedQuestionIndex: ",
-        selectedQuestionIndex
-      );
+      // console.log(
+      //   "[QuestionAnswerScreen.js] handleKeyPressed selectedQuestionIndex: ",
+      //   selectedQuestionIndex
+      // );
 
       if (questionTracker.length > 0) {
         if (event.key == "q") {
           if (!isShowAnswers && homeMenuOption == Constants.MENU_OPTION_ONE) {
-            console.log(
-              "[QuestionAnswerScreen.js] handleKeyPressed executeShowAnswersButton()"
-            );
+            // console.log(
+            //   "[QuestionAnswerScreen.js] handleKeyPressed executeShowAnswersButton()"
+            // );
             executeShowAnswersButton();
           } else if (
             !isShowAnswers &&
             homeMenuOption == Constants.MENU_OPTION_TWO &&
             selectedQuestionIndex >= questionTracker.length - 1
           ) {
-            console.log(
-              "[QuestionAnswerScreen.js] handleKeyPressed executeShowAllAnswersButton();"
-            );
+            // console.log(
+            //   "[QuestionAnswerScreen.js] handleKeyPressed executeShowAllAnswersButton();"
+            // );
             executeShowAllAnswersButton();
           } else if (isShowAnswers) {
-            console.log(
-              "[QuestionAnswerScreen.js] handleKeyPressed executeHideAnswersButton();"
-            );
+            // console.log(
+            //   "[QuestionAnswerScreen.js] handleKeyPressed executeHideAnswersButton();"
+            // );
             executeHideAnswersButton();
           }
         } else if (
@@ -165,17 +169,17 @@ const QuestionAnswerScreen = () => {
           selectedQuestionIndex &&
           selectedQuestionIndex > 0
         ) {
-          console.log(
-            "[QuestionAnswerScreen.js] handleKeyPressed executePrevButton();"
-          );
+          // console.log(
+          //   "[QuestionAnswerScreen.js] handleKeyPressed executePrevButton();"
+          // );
           executePrevButton();
         } else if (
           event.key == "e" &&
           selectedQuestionIndex < questionTracker.length - 1
         ) {
-          console.log(
-            "[QuestionAnswerScreen.js] handleKeyPressed executeNextButton();"
-          );
+          // console.log(
+          //   "[QuestionAnswerScreen.js] handleKeyPressed executeNextButton();"
+          // );
           executeNextButton();
         }
       }

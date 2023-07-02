@@ -32,9 +32,10 @@ const tempData = [
       },
     ],
   },
+
   //   -----------------------------------------------------------
   {
-    id: 22,
+    id: 2,
     numInReviewer: 3,
     question:
       "Base Stores configuratoon. Note: there are 3 correct answers to this question ",

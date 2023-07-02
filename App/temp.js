@@ -11,31 +11,31 @@
   choices: [
     {
       id: 1,
-      choice: "A. ?", 
+      choice: "?", 
       marked: false, 
       isChoiceCorrect: ?, // true or false
     },
     {
       id: 2,
-      choice: "B. ?", 
+      choice: "?", 
       marked: false, 
       isChoiceCorrect: ?, // true or false
     },
     {
       id: 3,
-      choice: "C. ?", 
+      choice: "?", 
       marked: false, 
       isChoiceCorrect: ?, // true or false
     },
     {
       id: 4,
-      choice: "D. ?", 
+      choice: "?", 
       marked: false, 
       isChoiceCorrect: ?, // true or false
     },
     {
       id: 5,
-      choice: "E. ?", 
+      choice: "?", 
       marked: false, 
       isChoiceCorrect: ?, // true or false
     },

@@ -3,13 +3,15 @@ const template = [
   //   -----------------------------------------------------------
   {
     id: 1,
+    numInReviewer: null,
     question: "?",
+    questionImg: null, //require("../assets/images/?.png"),
     choices: [
       {
         id: 1,
         choice: "?",
         marked: false,
-        isChoiceCorrect: false,
+        isChoiceCorrect: false, // true or false
       },
     ],
   },
@@ -371,7 +373,7 @@ const sapCertificationQuestAnsData = [
     id: 11,
     numInReviewer: 15,
     question:
-      "You synchronize a media item stored in Hybris from a Staged version to an Online VersionWhat happens? Note: There are 2 correct answers to this question.",
+      "You synchronize a media item stored in Hybris from a Staged version to an Online Version, what happens? Note: There are 2 correct answers to this question.",
     questionImg: null,
     choices: [
       {
@@ -777,7 +779,7 @@ const sapCertificationQuestAnsData = [
     id: 22,
     numInReviewer: 29,
     question:
-      "You have the following scenario: A product type with the custom attribute CostOfSale of type CostOfSale which is Catalog aware A synchronization job configured to synchronize product types and attribute costOfSale. What do you need to do to synchronize a product item including the related costOfSale item?",
+      "You have the following scenario: A product type with the custom attribute CostOfSale of type CostOfSale which is Catalog aware. A synchronization job configured to synchronize product types and attribute costOfSale. What do you need to do to synchronize a product item including the related costOfSale item? Note: There are 2 correct answers to this question.",
     questionImg: null,
     choices: [
       {
@@ -1389,7 +1391,7 @@ const sapCertificationQuestAnsData = [
     id: 39,
     numInReviewer: 57,
     question:
-      "Where the advantages of using classification attributes? Note: There are 2 correct answers to this question",
+      "What are the advantages of using classification attributes? Note: There are 2 correct answers to this question",
     questionImg: null,
     choices: [
       {

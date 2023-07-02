@@ -31,7 +31,7 @@ const QuestionChoiceComponent = ({ isShowAnswers, selectedQuestionIndex }) => {
   const scoreTracking = useSelector(selectScoreTracking);
   const letterList = ["A", "B", "C", "D", "E"];
 
-  console.log("[QuestionChoiceComponent.js]letterList:  ", letterList);
+  // console.log("[QuestionChoiceComponent.js]letterList:  ", letterList);
   const screen = Dimensions.get("window");
   return (
     <View style={styles.container}>
@@ -39,8 +39,12 @@ const QuestionChoiceComponent = ({ isShowAnswers, selectedQuestionIndex }) => {
       {questChoiceAnsData.length > 0 &&
         questionTracker.length > 0 &&
         questChoiceAnsData.map((data, index) => {
-          console.log("[QuestionAnswerScreen.js]index: ", index);
-          console.log("[QuestionAnswerScreen.js]data: ", data);
+          {
+            /* console.log("[QuestionChoiceComponent.js]index: ", index); */
+          }
+          {
+            /* console.log("[QuestionChoiceComponent.js]data: ", data); */
+          }
           const { num, choicesIndex } = questionTracker[selectedQuestionIndex];
           if (index == num) {
             // if (true) {
@@ -76,9 +80,9 @@ const QuestionChoiceComponent = ({ isShowAnswers, selectedQuestionIndex }) => {
                     {questionImg && (
                       <Image
                         style={{
-                          height: 300,
+                          height: 250,
                           resizeMode: "contain",
-                          width: screen.width,
+                          width: screen.width - 50,
                         }}
                         source={questionImg}
                         resizeMode="contain"
@@ -117,7 +121,7 @@ const QuestionChoiceComponent = ({ isShowAnswers, selectedQuestionIndex }) => {
                           },
                           isShowAnswers
                             ? homeMenuOption == Constants.MENU_OPTION_ONE
-                              ? { opacity: 0.4 }
+                              ? { opacity: 0.67 }
                               : { opacity: 0.9 }
                             : { opacity: 1 },
                         ]}

@@ -32,8 +32,8 @@ const HomeScreen = () => {
     dispatch(setQuestChoiceAnsData(tempData));
 
     //--> Set if questions will show randomly or default
-    // dispatch(setSequenceQuestions(Constants.SEQUENCE_RANDOM));
-    dispatch(setSequenceQuestions(Constants.SEQUENCE_DEFAULT));
+    dispatch(setSequenceQuestions(Constants.SEQUENCE_RANDOM));
+    // dispatch(setSequenceQuestions(Constants.SEQUENCE_DEFAULT));
 
     //--> Set if choices will show randomly or default
     dispatch(setSequenceChoices(Constants.SEQUENCE_RANDOM));

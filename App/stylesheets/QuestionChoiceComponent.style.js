@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     flex: 1,
     paddingVertical: 20,
+    marginHorizontal: 10,
   },
 
   choiceWrapper: {
